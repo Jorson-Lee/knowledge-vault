@@ -1,0 +1,12 @@
+{
+  "interfaceFontFamily": "Noto Sans TC",
+  "textFontFamily": "Noto Sans TC",
+  "accentColor": "#2191fb",
+  "monospaceFontFamily": "Noto Sans TC",
+  "baseFontSize": 24,
+  "baseFontSizeAction": true,
+  "enabledCssSnippets": [
+    "hierarchical numbered list"
+  ],
+  "theme": "obsidian"
+}
