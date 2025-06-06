@@ -109,7 +109,7 @@ void insertionSort(std::vector<int>& arr) {
 
 ```cpp
 void merge(std::vector<int>& arr, int left, int mid, int right) {
-    std::vector<int> leftArr(arr.begin() + left, arr.begin() + mid + 1);
+    std::vector<int> leftArr(arr.begin() + left, arr.begin() + mid + 1);//vector iterator是左閉右開(包含start不含end)
     std::vector<int> rightArr(arr.begin() + mid + 1, arr.begin() + right + 1);
     int i = 0, j = 0, k = left;
     while (i < leftArr.size() && j < rightArr.size()) {
