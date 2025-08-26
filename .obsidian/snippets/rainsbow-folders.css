@@ -1,7 +1,0 @@
-/* 彩虹漸層資料夾名稱 */
-.nav-folder-title-content {
-  background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
-  -webkit-background-clip: text;
-  color: transparent;
-  font-weight: bold;
-}
