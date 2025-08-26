@@ -1,0 +1,15 @@
+{
+  "interfaceFontFamily": "Noto Sans TC",
+  "textFontFamily": "Noto Sans TC",
+  "accentColor": "#2191fb",
+  "monospaceFontFamily": "Noto Sans TC",
+  "baseFontSize": 18,
+  "baseFontSizeAction": true,
+  "enabledCssSnippets": [
+    "hierarchical numbered list",
+    "Obsidian-Colored-Sidebar",
+    "MathJax"
+  ],
+  "theme": "obsidian",
+  "nativeMenus": false
+}

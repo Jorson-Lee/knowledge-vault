@@ -1,0 +1,193 @@
+{
+  "main": {
+    "id": "e5d59c46352419cd",
+    "type": "split",
+    "children": [
+      {
+        "id": "a3b060e798b2bf71",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f5c84b170f364b86",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "01 - 程式語言/Beginning C++ Programming - From Beginner to Beyond/Section 16 Polymorphism.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "e081818481486000",
+    "type": "mobile-drawer",
+    "children": [
+      {
+        "id": "dcb8aa87073350bd",
+        "type": "leaf",
+        "state": {
+          "type": "file-explorer",
+          "state": {
+            "sortOrder": "alphabetical"
+          }
+        }
+      },
+      {
+        "id": "3354c8ba11f2848f",
+        "type": "leaf",
+        "state": {
+          "type": "search",
+          "state": {
+            "query": "",
+            "matchingCase": false,
+            "explainSearch": false,
+            "collapseAll": false,
+            "extraContext": false,
+            "sortOrder": "alphabetical"
+          }
+        }
+      },
+      {
+        "id": "4172e37caf5559cd",
+        "type": "leaf",
+        "state": {
+          "type": "tag",
+          "state": {
+            "sortOrder": "frequency",
+            "useHierarchy": true
+          }
+        }
+      },
+      {
+        "id": "e4347c2e52307534",
+        "type": "leaf",
+        "state": {
+          "type": "bookmarks",
+          "state": {}
+        }
+      }
+    ],
+    "currentTab": 0
+  },
+  "right": {
+    "id": "066af40f81a6aae0",
+    "type": "mobile-drawer",
+    "children": [
+      {
+        "id": "8c70b8be10b6c2de",
+        "type": "leaf",
+        "state": {
+          "type": "backlink",
+          "state": {
+            "file": "01 - 程式語言/Beginning C++ Programming - From Beginner to Beyond/Section 16 Polymorphism.md",
+            "collapseAll": false,
+            "extraContext": false,
+            "sortOrder": "alphabetical",
+            "showSearch": false,
+            "searchQuery": "",
+            "backlinkCollapsed": false,
+            "unlinkedCollapsed": true
+          }
+        }
+      },
+      {
+        "id": "b0dd06757fe17d18",
+        "type": "leaf",
+        "state": {
+          "type": "outgoing-link",
+          "state": {
+            "file": "01 - 程式語言/Beginning C++ Programming - From Beginner to Beyond/Section 16 Polymorphism.md",
+            "linksCollapsed": false,
+            "unlinkedCollapsed": true
+          }
+        }
+      },
+      {
+        "id": "723e3ccf09c79d6d",
+        "type": "leaf",
+        "state": {
+          "type": "outline",
+          "state": {
+            "file": "01 - 程式語言/Beginning C++ Programming - From Beginner to Beyond/Section 16 Polymorphism.md"
+          }
+        }
+      },
+      {
+        "id": "17c3e098d7b3dac6",
+        "type": "leaf",
+        "state": {
+          "type": "calendar",
+          "state": {}
+        }
+      }
+    ],
+    "currentTab": 2
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "switcher:開啟快速切換": false,
+      "graph:查看關聯圖": false,
+      "canvas:建立新畫布": false,
+      "daily-notes:開啟今天的每日筆記": false,
+      "templates:插入模板": false,
+      "command-palette:開啟命令面板": false,
+      "remotely-save:Remotely Save": false
+    }
+  },
+  "active": "f5c84b170f364b86",
+  "lastOpenFiles": [
+    "06 - Machine Learning/3.Optimization.md",
+    "06 - Machine Learning/1.Introduction 1.md",
+    "06 - Machine Learning/1.Introduction.md",
+    "06 - Machine Learning/2.Overfitting and Model Choice.md",
+    "06 - Machine Learning/4.Adaptive Leaning Rate.md",
+    "06 - Machine Learning/attachments/Pasted image 20250823151850.png",
+    "06 - Machine Learning/attachments/Pasted image 20250823152019.png",
+    "06 - Machine Learning/attachments/Pasted image 20250823152029.png",
+    "06 - Machine Learning/attachments/Pasted image 20250823151923.png",
+    "06 - Machine Learning/attachments/Pasted image 20250822183756.png",
+    "06 - Machine Learning/attachments/Pasted image 20250823151832.png",
+    "06 - Machine Learning/attachments/Pasted image 20250823151635.png",
+    "06 - Machine Learning/attachments/Pasted image 20250822183910.png",
+    "06 - Machine Learning/attachments/Pasted image 20250822182518.png",
+    "06 - Machine Learning/attachments/Pasted image 20250822183615.png",
+    "06 - Machine Learning/attachments/Pasted image 20250822183701.png.md",
+    "06 - Machine Learning/Overfitting and Model Choice.md",
+    "06 - Machine Learning/Introduction.md",
+    "06 - Machine Learning/Introduction-draft.md",
+    "06 - Machine Learning/attachments",
+    "Introduction.md",
+    "Introduction-draft.md",
+    "Overfitting and Model Choice.md",
+    "attachments",
+    "06 - Machine Learning",
+    "01 - 程式語言/Beginning C++ Programming - From Beginner to Beyond/Section 14-2 Copy&Move assignment constructor.md",
+    "01 - 程式語言/Beginning C++ Programming - From Beginner to Beyond/Section 14-1 Operator Overloading.md",
+    "01 - 程式語言/Beginning C++ Programming - From Beginner to Beyond/Section 20 STL.md",
+    "Welcome.md",
+    "04 - 演算法筆記/合併成本.md",
+    "04 - 演算法筆記/演算法目錄.md",
+    "04 - 演算法筆記/Matrix Multiplication.md",
+    "05 - Python Data Analyzation/資料分析.md",
+    "05 - Python Data Analyzation/Numpy.md",
+    "04 - 演算法筆記/Chap2 Divide-and-Conquer.md",
+    "05 - Python Data Analyzation/Series.md",
+    "05 - Python Data Analyzation/numpy筆記.md",
+    "05 - Python Data Analyzation/series筆記.md",
+    "04 - 演算法筆記/Chap1 Analyzing Algorithms.md",
+    "04 - 演算法筆記",
+    "05 - Python Data Analyzation",
+    "01 - 程式語言/C++筆記",
+    "01 - 程式語言/Beginning C++ Programming - From Beginner to Beyond/PDF version",
+    "01 - 程式語言/Beginning C++ Programming - From Beginner to Beyond/attachments",
+    "00 - 股票經濟學/attachments",
+    "01 - 程式語言/Beginning C++ Programming - From Beginner to Beyond"
+  ]
+}
