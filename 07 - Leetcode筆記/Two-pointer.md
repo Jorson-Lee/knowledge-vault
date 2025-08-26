@@ -36,7 +36,7 @@ public:
 為什麼要這樣呢？這裡簡單說一下其中的原理。
 
 我們假設快慢指標相遇時，慢指標 `slow` 走了 `k` 步，那麼快指標 `fast` 一定走了 `2k` 步：
-![400](06%20-%20Machine%20Learning/attachments/Pasted%20image%2020250825121217.png)
+![400](06%20-%20Machine%20Learning/attachments/20250825121217.png)
 
 `fast` 一定比 `slow` 多走了 `k` 步，這多走的 `k` 步其實就是 `fast` 指標在環裡轉圈圈，所以 `k` 的值就是環長度的「整數倍」。
 
