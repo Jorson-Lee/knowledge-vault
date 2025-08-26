@@ -1,6 +1,6 @@
 ---
 Up:
-  - "[Beginning C++ Programming - From Beginner to Beyond](01%20-%20程式語言/Beginning%20C++%20Programming%20-%20From%20Beginner%20to%20Beyond/Beginning%20C++%20Programming%20-%20From%20Beginner%20to%20Beyond.md)"
+  - "[Beginning C++ Programming - From Beginner to Beyond](Beginning%20C++%20Programming%20-%20From%20Beginner%20to%20Beyond.md)"
 ---
 # 📌 為什麼要使用指標（Why use Pointers?）
 指標（Pointer）是一種變數，儲存的是記憶體位置，它讓你可以更靈活、高效、低階地操作資料，是 C/C++ 語言的核心特性之一。

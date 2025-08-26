@@ -38,7 +38,7 @@ int result = add(3, 5); // == 8
 Lambda expressions 背後實作其實就是**compiler 自動生成的匿名 functor class**。
 
 ```cpp
-auto lambda = [](int a, int b) { return a + b; };
+auto lambda = [int a, int b](int%20a,%20int%20b) { return a + b; };
 ```
 
 會被轉換為類似這樣的東西：
@@ -76,7 +76,7 @@ Lambda 表達式的基本語法結構：
 
 ```cpp
 int x = 10;
-auto addX = [x](int y) { return x + y; };
+auto addX = [x](int%20y) { return x + y; };
 std::cout << addX(5); // 輸出 15
 ```
 
@@ -87,7 +87,7 @@ std::cout << addX(5); // 輸出 15
 **定義：** 沒有 capture 外部變數的 lambda，稱為 stateless，轉型為 function pointer 是合法的。
 
 ```cpp
-auto square = [](int x) { return x * x; };
+auto square = [int x](int%20x) { return x * x; };
 std::cout << square(4); // 16
 
 // 可轉換為 function pointer
@@ -140,7 +140,7 @@ std::cout << fptr(5); // 25
 #### 範例 3 — 多參數 Lambda
 
 ```cpp
-[](int x, int y) { std::cout << x + y << std::endl; }(100, 200);
+[int x, int y](int%20x,%20int%20y) { std::cout << x + y << std::endl; }(100, 200);
 ```
 
 - 兩個參數 `x`、`y`。
@@ -169,7 +169,7 @@ l1();
 ```cpp
 std::vector<int> nums {10, 20, 30, 40, 50, 60};
 
-filter_vector(nums, [](int x) { return x > 30; });
+filter_vector(nums, [int x](int%20x) { return x > 30; });
 ```
 
 - 這裡 `filter_vector` 接收一個 `std::function<bool(int)>`，而 Lambda 是一個無狀態的布林條件函式。
@@ -196,7 +196,7 @@ l5();
 #### 範例 7 — Lambda 參數使用 auto（C++14 以上）
 
 ```cpp
-auto l6 = [](auto x, auto y) {
+auto l6 = [auto x, auto y](auto%20x,%20auto%20y) {
     std::cout << "x: " << x << " y: " << y << std::endl;
 };
 
@@ -234,7 +234,7 @@ int global_x {1000};
 
 void test1() {
     int local_x {100};
-    auto l = [local_x]() {
+    auto l = [local_x](.md) {
         std::cout << local_x << std::endl;   // 捕獲 local_x 的值副本
         std::cout << global_x << std::endl;  // 全域變數可直接使用，不需捕獲
     };
@@ -254,7 +254,7 @@ void test1() {
 ```cpp
 void test2() {
     int x {100};
-    auto l = [x]() mutable {
+    auto l = [x](.md) mutable {
         x += 100;    // 修改的是 Lambda 內部的副本 x，不影響外部
         std::cout << x << std::endl;
     };
@@ -272,7 +272,7 @@ void test2() {
 ##### **capture 是在 lambda _建立時_ 發生，而不是在第一次執行時才發生。**
 
 
-1. `auto l = [x]() mutable { ... };`
+1. `auto l = [x](.md) mutable { ... };`
     
     - 此行建立 `lambda` 時，**複製了外部變數 `x` 的值（此時為 100）** 進到 lambda 內部。
         
@@ -296,7 +296,7 @@ void test2() {
 ```cpp
 void test3() {
     int x {100};
-    auto l = [&x]() mutable {
+    auto l = [&x](.md) mutable {
         x += 100;    // 直接修改外部的 x
         std::cout << x << std::endl;
     };
@@ -315,7 +315,7 @@ void test3() {
 ```cpp
 void test4() {
     int x {100}, y {200}, z {300};
-    auto l = [=]() mutable {
+    auto l = [=](.md) mutable {
         x += 100;  // 修改 Lambda 內副本
         y += 100;
         std::cout << x << std::endl; // 200
@@ -339,7 +339,7 @@ void test4() {
 ```cpp
 void test5() {
     int x {100}, y {200}, z {300};
-    auto l = [&]() {
+    auto l = [&](.md) {
         x += 100;  
         y += 100;  
         z += 100;
@@ -364,7 +364,7 @@ void test5() {
 ```cpp
 void test6() {
     int x {100}, y {200}, z {300};
-    auto l = [=, &y]() mutable {
+    auto l = [=, &y](.md) mutable {
         x += 100;  
         y += 100;  // y 是參考捕獲，會修改外部 y
         z += 100;
@@ -389,7 +389,7 @@ void test6() {
 ```cpp
 void test7() {
     int x {100}, y {200}, z {300};
-    auto l = [&, x, z]() mutable {
+    auto l = [&, x, z](.md) mutable {
         x += 100;  // x 是值捕獲（Lambda 內副本）
         y += 100;  // y 是參考捕獲
         z += 100;  // z 是值捕獲
@@ -422,7 +422,7 @@ class Person {
     Person(std::string n, int a) : name{n}, age{a} {}
     
     auto change_person1() {
-        return [this](std::string new_name, int new_age) {
+        return [this](std::string%20new_name,%20int%20new_age) {
             name = new_name;  // 透過 this 指標操作成員變數
             age = new_age;
         };
@@ -464,7 +464,7 @@ class Lambda {
 void test9() {
     int y {100};
     Lambda lambda1(y);
-    auto lambda2 = [y](int x) { std::cout << x + y << std::endl; };
+    auto lambda2 = [y](int%20x) { std::cout << x + y << std::endl; };
     
     lambda1(200);  // 輸出 300
     lambda2(200);  // 輸出 300
@@ -500,7 +500,7 @@ class People {
         std::vector<Person> result;
         int count{0};
         std::copy_if(people.begin(), people.end(), std::back_inserter(result),
-            [this, &count, max_age](const Person &p) {
+            [this, &count, max_age](const%20Person%20&p) {
                 return p.get_age() > max_age && ++count <= max_people;
             });
         return result;
@@ -589,7 +589,7 @@ std::function<int(int, int)> add;
 |---|---|
 |普通函式|`void greet();`|
 |函式指標|`void (*ptr)();`|
-|Lambda（具/無 capture）|`[](int x) { return x*x; }`|
+|Lambda（具/無 capture）|`[int x](int%20x) { return x*x; }`|
 |函式物件（定義了 `operator()`）|`struct MyFunctor { void operator()(); };`|
 |經由 `std::bind` 包裝的呼叫物件|`std::bind(func, args...)`|
 
@@ -619,14 +619,14 @@ int main() {
 
 #### 🧪 (B) 封裝 lambda（無 capture）
 ```cpp
-std::function<int(int)> square = [](int x) { return x * x; }; 
+std::function<int(int)> square = [int x](int%20x) { return x * x; }; 
 std::cout << square(5);  // 輸出 25
 ```
 
 #### 🧪 (C) 封裝 lambda（有 capture）
 ```cpp
 int factor = 3; 
-std::function<int(int)> scale = [factor](int x) { return x * factor; }; 
+std::function<int(int)> scale = [factor](int%20x) { return x * factor; }; 
 std::cout << scale(10);  // 輸出 30
 ```
 
@@ -686,7 +686,7 @@ Lambda 表示式是匿名函式，可以像一般函式物件一樣 return，常
 #include <functional>
 
 std::function<int(int)> make_adder(int x) {
-    return [x](int y) {
+    return [x](int%20y) {
         return x + y;
     };
 }
@@ -726,7 +726,7 @@ int main() {
 
 ```cpp
 std::vector<int> v = {1, 3, 5, 7, 10};
-auto it = std::find_if(v.begin(), v.end(), [](int x) { return x > 6; });
+auto it = std::find_if(v.begin(), v.end(), [int x](int%20x) { return x > 6; });
 if (it != v.end()) std::cout << *it << std::endl; // 輸出 7
 ```
 
@@ -746,7 +746,7 @@ if (it != v.end()) std::cout << *it << std::endl; // 輸出 7
 
 ```cpp
 std::vector<int> v = {1, 2, 3, 4, 5};
-auto it = std::remove_if(v.begin(), v.end(), [](int x) { return x % 2 == 0; });
+auto it = std::remove_if(v.begin(), v.end(), [int x](int%20x) { return x % 2 == 0; });
 v.erase(it, v.end()); // 移除偶數
 ```
 
@@ -766,7 +766,7 @@ v.erase(it, v.end()); // 移除偶數
 
 ```cpp
 std::vector<int> v = {3, 1, 4, 2};
-std::sort(v.begin(), v.end(), [](int a, int b) { return a > b; });
+std::sort(v.begin(), v.end(), [int a, int b](int%20a,%20int%20b) { return a > b; });
 // 變成降冪排序
 ```
 
@@ -781,7 +781,7 @@ public:
     int age;
 
     auto get_filter() {
-        return [this](int min_age) {
+        return [this](int%20min_age) {
             return age >= min_age; // 使用 this->age
         };
     }
@@ -797,7 +797,7 @@ public:
 **功能：** 對容器中的每個元素執行動作
 
 ```cpp
-std::for_each(nums.begin(), nums.end(), [](int num) {
+std::for_each(nums.begin(), nums.end(), [int num](int%20num) {
     std::cout << num << " ";
 });
 ```
@@ -807,7 +807,7 @@ std::for_each(nums.begin(), nums.end(), [](int num) {
 **功能：** 判斷兩個 triangle 向量是否包含相同的點（順序無關）
 
 ```cpp
-std::is_permutation(vec1.begin(), vec1.end(), vec2.begin(), [](Point lhs, Point rhs) {
+std::is_permutation(vec1.begin(), vec1.end(), vec2.begin(), [Point lhs, Point rhs](Point%20lhs,%20Point%20rhs) {
     return lhs.x == rhs.x && lhs.y == rhs.y;
 });
 ```
@@ -817,7 +817,7 @@ std::is_permutation(vec1.begin(), vec1.end(), vec2.begin(), [](Point lhs, Point 
 **功能：** 對每個元素加上 bonus 值
 
 ```cpp
-std::transform(scores.begin(), scores.end(), scores.begin(), [bonus](int x) {
+std::transform(scores.begin(), scores.end(), scores.begin(), [bonus](int%20x) {
     return x + bonus;
 });
 ```
@@ -827,7 +827,7 @@ std::transform(scores.begin(), scores.end(), scores.begin(), [bonus](int x) {
 **功能：** 移除所有偶數元素
 
 ```cpp
-nums.erase(std::remove_if(nums.begin(), nums.end(), [](int num) {
+nums.erase(std::remove_if(nums.begin(), nums.end(), [int num](int%20num) {
     return num % 2 == 0;
 }), nums.end());
 ```
@@ -838,12 +838,12 @@ nums.erase(std::remove_if(nums.begin(), nums.end(), [](int num) {
 
 ```cpp
 // 依 name 遞增排序
-std::sort(people.begin(), people.end(), [](Person a, Person b) {
+std::sort(people.begin(), people.end(), [Person a, Person b](Person%20a,%20Person%20b) {
     return a.get_name() < b.get_name();
 });
 
 // 依 age 遞減排序
-std::sort(people.begin(), people.end(), [](Person a, Person b) {
+std::sort(people.begin(), people.end(), [Person a, Person b](Person%20a,%20Person%20b) {
     return a.get_age() > b.get_age();
 });
 ```
@@ -853,7 +853,7 @@ std::sort(people.begin(), people.end(), [](Person a, Person b) {
 **功能：** 檢查所有數字是否落在某區間內
 
 ```cpp
-std::all_of(nums.begin(), nums.end(), [start, end](int x) {
+std::all_of(nums.begin(), nums.end(), [start, end](int%20x) {
     return x >= start && x <= end;
 });
 ```
@@ -863,13 +863,13 @@ std::all_of(nums.begin(), nums.end(), [start, end](int x) {
 **功能：** 驗證密碼中是否含有禁用字元
 
 ```cpp
-std::all_of(password.begin(), password.end(), [this](char c) {
+std::all_of(password.begin(), password.end(), [this](char%20c) {
     return c != restricted_symbol;
 });
 
 // 使用巢狀 lambda 判斷多個禁用符號：
-std::all_of(password.begin(), password.end(), [this](char c) {
-    return std::none_of(restricted_symbols.begin(), restricted_symbols.end(), [c](char s) {
+std::all_of(password.begin(), password.end(), [this](char%20c) {
+    return std::none_of(restricted_symbols.begin(), restricted_symbols.end(), [c](char%20s) {
         return c == s;
     });
 });

@@ -1,6 +1,6 @@
 ---
 Up:
-  - "[Beginning C++ Programming - From Beginner to Beyond](01%20-%20程式語言/Beginning%20C++%20Programming%20-%20From%20Beginner%20to%20Beyond/Beginning%20C++%20Programming%20-%20From%20Beginner%20to%20Beyond.md)"
+  - "[Beginning C++ Programming - From Beginner to Beyond](Beginning%20C++%20Programming%20-%20From%20Beginner%20to%20Beyond.md)"
 ---
 # Arrays
 ## What is an array?
@@ -43,10 +43,10 @@ Element_Type array_name [dim1_size] [dim2_size]
 int movie_rating [3][4];
 ```
 - 2D row-major
-![Pasted image 20250513133325](01%20-%20程式語言/Beginning%20C++%20Programming%20-%20From%20Beginner%20to%20Beyond/attachments/Pasted%20image%2020250513133325.png)
+![Pasted image 20250513133325](attachments/Pasted%20image%2020250513133325.png)
 - 2D column-major
-![Pasted image 20250513133335](01%20-%20程式語言/Beginning%20C++%20Programming%20-%20From%20Beginner%20to%20Beyond/attachments/Pasted%20image%2020250513133335.png)
-![Pasted image 20250513133339](01%20-%20程式語言/Beginning%20C++%20Programming%20-%20From%20Beginner%20to%20Beyond/attachments/Pasted%20image%2020250513133339.png)
+![Pasted image 20250513133335](attachments/Pasted%20image%2020250513133335.png)
+![Pasted image 20250513133339](attachments/Pasted%20image%2020250513133339.png)
 # Vectors
 `vector` 是 C++ 標準函式庫 STL（Standard Template Library）中提供的一種**序列容器**，可以視為一種**動態陣列**（Dynamic Array），其大小可自動調整。
 宣告:

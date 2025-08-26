@@ -1,6 +1,6 @@
 ---
 Up:
-  - "[演算法目錄](04%20-%20演算法筆記/演算法目錄.md)"
+  - "[演算法目錄](演算法目錄.md)"
 ---
 >[!info]
 >分治法，您可以遞歸地解決給定的問題（實例）。如果問題夠小，<font color="#00b0f0">基本情況</font>你直接解決它
@@ -77,5 +77,5 @@ $$
 但其實就算把 $\Theta(n^{log_b a})$ 考量進去,你會發現這項 $\Theta(n^{log_b a})$ 其實不影響到最後運算的結果 。
 為以 $Big\textemdash O$ 求時間複雜度時，只需考慮$n$的指數最大的那項，因此觀察展開後的式子，我們可以只關注$(c)$式中第一項$n^{\log_b a}T(1)$ 和最後一項$f(n)$之間誰大誰小即可
 # 經典例題
-1. [The Maximum Subarray Problem](04%20-%20演算法筆記/The%20Maximum%20Subarray%20Problem.md)
-2. [Matrix Multiplication](04%20-%20演算法筆記/Matrix%20Multiplication.md)
+1. [The Maximum Subarray Problem](The%20Maximum%20Subarray%20Problem.md)
+2. [Matrix Multiplication](Matrix%20Multiplication.md)

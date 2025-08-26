@@ -390,13 +390,13 @@ public:
     }
 
     // 索引運算子
-    T& operator[](size_t index) {
+    T& operator[size_t index](size_t%20index) {
         if (index >= size) throw out_of_range("Index out of range");
         return data[index];
     }
 
     // const 版本
-    const T& operator[](size_t index) const {
+    const T& operator[size_t index](size_t%20index) const {
         if (index >= size) throw out_of_range("Index out of range");
         return data[index];
     }
@@ -464,7 +464,7 @@ int main() {
 
 # 📦 STL 容器 Containers
 
-![Pasted image 20250714091102](01%20-%20程式語言/Beginning%20C++%20Programming%20-%20From%20Beginner%20to%20Beyond/attachments/Pasted%20image%2020250714091102.png)
+![Pasted image 20250714091102](attachments/Pasted%20image%2020250714091102.png)
 
 ---
 
@@ -2107,7 +2107,7 @@ int main() {
 - 無法內嵌簡單邏輯（需額外定義函式）
 
 ## ⚡ 3. Lambda Expressions(C++11 之後)
-[Lambda Expression](01%20-%20程式語言/Beginning%20C++%20Programming%20-%20From%20Beginner%20to%20Beyond/Section%2021%20Lambda%20Expression.md)
+[Lambda Expression](Section%2021%20Lambda%20Expression.md)
 
 ---
 # 🧮 STL 演算法 Algorithms
@@ -2178,7 +2178,7 @@ int main() {
 #### ✅ 使用 lambda 自訂遞減排序
 
 ```cpp
-std::sort(v.begin(), v.end(), [](int a, int b) {
+std::sort(v.begin(), v.end(), [int a, int b](int%20a,%20int%20b) {
     return a > b;
 });
 // 輸出：5 4 3 2 1
@@ -2215,7 +2215,7 @@ std::sort(students.begin(), students.end(), CompareByScoreDesc{});
 
 ```cpp
 std::sort(students.begin(), students.end(),
-    [](const Student& a, const Student& b) {
+    [const Student& a, const Student& b](const%20Student&%20a,%20const%20Student&%20b) {
         return a.name < b.name;
     });
 ```
@@ -2268,7 +2268,7 @@ InputIt find_if( InputIt first, InputIt last, UnaryPredicate p );
 int main() {
     std::vector<int> v = {2, 4, 6, 7, 8};
 
-    auto it = std::find_if(v.begin(), v.end(), [](int x) {
+    auto it = std::find_if(v.begin(), v.end(), [int x](int%20x) {
         return x % 2 != 0;
     });
 
@@ -2296,7 +2296,7 @@ std::vector<Student> students = {
     {"Alice", 55}, {"Bob", 40}, {"Charlie", 75}, {"David", 60}
 };
 
-auto it = std::find_if(students.begin(), students.end(), [](const Student& s) {
+auto it = std::find_if(students.begin(), students.end(), [const Student& s](const%20Student&%20s) {
     return s.score >= 60;
 });
 
@@ -2352,7 +2352,7 @@ UnaryFunction for_each( InputIt first, InputIt last, UnaryFunction f );
 int main() {
     std::vector<int> v = {1, 2, 3, 4, 5};
 
-    std::for_each(v.begin(), v.end(), [](int x) {
+    std::for_each(v.begin(), v.end(), [int x](int%20x) {
         std::cout << x << ' ';
     });
     // 輸出：1 2 3 4 5
@@ -2377,12 +2377,12 @@ int main() {
     };
 
     // 提升每個學生 5 分
-    std::for_each(students.begin(), students.end(), [](Student& s) {
+    std::for_each(students.begin(), students.end(), [Student& s](Student&%20s) {
         s.score += 5;
     });
 
     // 列印結果
-    std::for_each(students.begin(), students.end(), [](const Student& s) {
+    std::for_each(students.begin(), students.end(), [const Student& s](const%20Student&%20s) {
         std::cout << s.name << ": " << s.score << '\n';
     });
 }
@@ -2401,7 +2401,7 @@ int main() {
     int sum = 0;
 
     // 捕捉外部變數 sum，累加每個元素
-    std::for_each(v.begin(), v.end(), [&sum](int x) {
+    std::for_each(v.begin(), v.end(), [&sum](int%20x) {
         sum += x;
     });
 

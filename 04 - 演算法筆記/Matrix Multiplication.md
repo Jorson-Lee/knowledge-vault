@@ -1,6 +1,6 @@
 ---
 Up:
-  - "[](04%20-%20演算法筆記/Chap2%20Divide-and-Conquer.md#經典例題|經典例題)"
+  - "[](Chap2%20Divide-and-Conquer.md#經典例題|經典例題)"
 ---
 
 > [!NOTE] 札記

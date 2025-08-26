@@ -189,7 +189,7 @@ if (p1 == p2) {
 class MyArray {
     int data[10];
 public:
-    int& operator[](int index) {
+    int& operator[int index](int%20index) {
         return data[index];
     }
 };

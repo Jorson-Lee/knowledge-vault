@@ -1,6 +1,6 @@
 ---
 Up:
-  - "[](04%20-%20演算法筆記/Chap2%20Divide-and-Conquer.md#經典例題|經典例題)"
+  - "[](Chap2%20Divide-and-Conquer.md#經典例題|經典例題)"
 ---
 ## 定義
 給定一個整數陣列A\[1...n\]，其中具有最大元素和之subarray(或稱為Maximum subarray)為何?

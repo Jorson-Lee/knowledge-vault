@@ -101,7 +101,7 @@ scores
 </div>
 
 ```python
-scores["Total"] = scores["數學", "英語", "物理"]("數學",%20"英語",%20"物理").sum(axis=1)
+scores["Total"]("數學",%20"英語",%20"物理").sum(axis=1)
 scores
 ```
 
@@ -176,7 +176,7 @@ scores
 </div>
 
 ```python
-scores["Average"] = scores["數學", "英語", "物理"]("數學",%20"英語",%20"物理").mean(axis=1)
+scores["Average"]("數學",%20"英語",%20"物理").mean(axis=1)
 scores
 ```
 

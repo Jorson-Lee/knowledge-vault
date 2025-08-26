@@ -29,21 +29,21 @@ public:
 當然，這個問題還有進階版，也是力扣第 142 題「[環形連結串列 II](https://leetcode.cn/problems/linked-list-cycle-ii/)」：如果連結串列中含有環，如何計算這個環的起點？
 
 舉個例子，環的起點是指下面這幅圖中的節點 2：
-![Pasted image 20250825121629](06%20-%20Machine%20Learning/attachments/Pasted%20image%2020250825121629.png)
+![Pasted image 20250825121629](attachments/PastedImage-20250826_152534.png)
 
 可以看到，當快慢指標相遇時，讓其中任一個指標指向頭節點，然後讓它倆以相同速度前進，再次相遇時所在的節點位置就是環開始的位置。
 
 為什麼要這樣呢？這裡簡單說一下其中的原理。
 
 我們假設快慢指標相遇時，慢指標 `slow` 走了 `k` 步，那麼快指標 `fast` 一定走了 `2k` 步：
-![400](06%20-%20Machine%20Learning/attachments/20250825121217.png)
+![400](attachments/PastedImage-20250826_152534-1.png)
 
 `fast` 一定比 `slow` 多走了 `k` 步，這多走的 `k` 步其實就是 `fast` 指標在環裡轉圈圈，所以 `k` 的值就是環長度的「整數倍」。
 
 假設相遇點距環的起點的距離為 `m`，那麼結合上圖的 `slow` 指標，環的起點距頭結點 `head` 的距離為 `k - m`，也就是說如果從 `head` 前進 `k - m` 步就能到達環起點。
 
 巧的是，如果從相遇點繼續前進 `k - m` 步，也恰好到達環起點。因為結合上圖的 `fast` 指標，從相遇點開始走k步可以轉回到相遇點，那走 `k - m` 步肯定就走到環起點了：
-![400](06%20-%20Machine%20Learning/attachments/Pasted%20image%2020250825121236.png)
+![400](07%20-%20Leetcode筆記/attachments/PastedImage20250825_121236.png)
 
 所以，只要我們把快慢指標中的任一個重新指向 `head`，然後兩個指標同速前進，`k - m` 步後一定會相遇，相遇之處就是環的起點了。
 
@@ -82,7 +82,7 @@ public:
 如果相交，你的演演演算法應該返回相交的那個節點；如果沒相交，則返回 null。
 
 比如題目給我們舉的例子，如果輸入的兩個連結串列如下圖：
-![400](06%20-%20Machine%20Learning/attachments/Pasted%20image%2020250825121755.png)
+![400](07%20-%20Leetcode筆記/attachments/PastedImage20250825_121755.png)
 那麼我們的算
 那麼我們的演演演算法應該返回 `c1` 這個節點。
 
@@ -90,7 +90,7 @@ public:
 
 如果不用額外的空間，只使用兩個指標，你如何做呢？
 難點在於，由於兩條連結串列的長度可能不同，兩條連結串列之間的節點無法對應：
-![400](06%20-%20Machine%20Learning/attachments/Pasted%20image%2020250825122205.png)
+![400](07%20-%20Leetcode筆記/attachments/PastedImage20250825_122205.png)
 
 如果用兩個指標 `p1` 和 `p2` 分別在兩條連結串列上前進，並不能**同時**走到公共節點，也就無法得到相交節點 `c1`。
 
@@ -100,7 +100,7 @@ public:
 
 如果這樣進行拼接，就可以讓 `p1` 和 `p2` 同時進入公共部分，也就是同時到達相交節點 `c1`：
 
-![400](06%20-%20Machine%20Learning/attachments/Pasted%20image%2020250825122324.png)
+![400](07%20-%20Leetcode筆記/attachments/PastedImage20250825_122324.png)
 
 那你可能會問，如果說兩個連結串列沒有相交點，是否能夠正確的返回 null 呢？
 
@@ -235,13 +235,13 @@ B: b1
 這個解法就比較巧妙了，假設 k = 2，思路如下：
 
 首先，我們先讓一個指標 p1 指向連結串列的頭節點 head，然後走 k 步：
-![400](07%20-%20Leetcode筆記/attachments/Pasted%20image%2020250826113942.png)
+![400](07%20-%20Leetcode筆記/attachments/PastedImage20250826113942.png)
 現在的 `p1`，只要再走 `n - k` 步，就能走到連結串列末尾的空指標了對吧？
 
 趁這個時候，再用一個指標 `p2` 指向連結串列頭節點 `head`：
-![400](07%20-%20Leetcode筆記/attachments/Pasted%20image%2020250826114011.png)
+![400](07%20-%20Leetcode筆記/attachments/PastedImage20250826114011.png)
 接下來就很顯然了，讓 `p1` 和 `p2` 同時向前走，`p1` 走到連結串列末尾的空指標時前進了 `n - k` 步，`p2` 也從 `head` 開始前進了 `n - k` 步，停留在第 `n - k + 1` 個節點上，即恰好停連結串列的倒數第 `k` 個節點上：
-![400](07%20-%20Leetcode筆記/attachments/Pasted%20image%2020250826114025.png)
+![400](07%20-%20Leetcode筆記/attachments/PastedImage20250826114025.png)
 這樣，只遍歷了一次連結串列，就獲得了倒數第 `k` 個節點 `p2`。
 ```cpp
 //

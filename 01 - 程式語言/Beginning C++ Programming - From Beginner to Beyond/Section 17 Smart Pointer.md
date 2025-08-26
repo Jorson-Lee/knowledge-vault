@@ -511,7 +511,7 @@ int main() {
 #include <memory>
 
 int main() {
-    auto deleter = [](int* ptr) {
+    auto deleter = [int* ptr](int*%20ptr) {
         std::cout << "Deleting int pointer with value: " << *ptr << std::endl;
         delete ptr;
     };
@@ -532,7 +532,7 @@ struct MyResource {
 };
 
 int main() {
-    auto customDeleter = [](MyResource* p) {
+    auto customDeleter = [MyResource* p](MyResource*%20p) {
         std::cout << "Custom deleter called\n";
         delete p;
     };

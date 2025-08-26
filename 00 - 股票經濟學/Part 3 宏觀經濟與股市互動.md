@@ -124,7 +124,7 @@ $$\text{股價} = \frac{\text{未來現金流}}{(1 + r)^t}$$
 
 經濟活動會自然呈現「循環」，不是永遠成長，也不是永遠衰退。經濟週期通常分為四個階段：
 
-![Pasted image 20250603182520](00%20-%20股票經濟學/attachments/Pasted%20image%2020250603182520.png)
+![Pasted image 20250603182520](attachments/Pasted%20image%2020250603182520.png)
 
 1. **擴張（Expansion）**：GDP 上升、失業率下降、企業獲利成長
     
