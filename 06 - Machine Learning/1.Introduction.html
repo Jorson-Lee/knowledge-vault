@@ -1,0 +1,3596 @@
+<!doctype html>
+<html>
+    <head>
+        <title>1.Introduction</title>
+        <meta charset='utf-8'/>
+        <style>
+ .ͼ1.cm-focused {outline: 1px dotted #212121;}
+.ͼ1 {position: relative !important; box-sizing: border-box; display: flex !important; flex-direction: column;}
+.ͼ1 .cm-scroller {display: flex !important; align-items: flex-start !important; font-family: monospace; line-height: 1.4; height: 100%; overflow-x: auto; position: relative; z-index: 0; overflow-anchor: none;}
+.ͼ1 .cm-content[contenteditable=true] {-webkit-user-modify: read-write-plaintext-only;}
+.ͼ1 .cm-content {margin: 0; flex-grow: 2; flex-shrink: 0; display: block; white-space: pre; word-wrap: normal; box-sizing: border-box; min-height: 100%; padding: 4px 0; outline: none;}
+.ͼ1 .cm-lineWrapping {white-space: pre-wrap; white-space: break-spaces; word-break: break-word; overflow-wrap: anywhere; flex-shrink: 1;}
+.ͼ2 .cm-content {caret-color: black;}
+.ͼ3 .cm-content {caret-color: white;}
+.ͼ1 .cm-line {display: block; padding: 0 2px 0 6px;}
+.ͼ1 .cm-layer > * {position: absolute;}
+.ͼ1 .cm-layer {position: absolute; left: 0; top: 0; contain: size style;}
+.ͼ2 .cm-selectionBackground {background: #d9d9d9;}
+.ͼ3 .cm-selectionBackground {background: #222;}
+.ͼ2.cm-focused > .cm-scroller > .cm-selectionLayer .cm-selectionBackground {background: #d7d4f0;}
+.ͼ3.cm-focused > .cm-scroller > .cm-selectionLayer .cm-selectionBackground {background: #233;}
+.ͼ1 .cm-cursorLayer {pointer-events: none;}
+.ͼ1.cm-focused > .cm-scroller > .cm-cursorLayer {animation: steps(1) cm-blink 1.2s infinite;}
+@keyframes cm-blink {50% {opacity: 0;}}
+@keyframes cm-blink2 {50% {opacity: 0;}}
+.ͼ1 .cm-cursor, .ͼ1 .cm-dropCursor {border-left: 1.2px solid black; margin-left: -0.6px; pointer-events: none;}
+.ͼ1 .cm-cursor {display: none;}
+.ͼ3 .cm-cursor {border-left-color: #ddd;}
+.ͼ1 .cm-dropCursor {position: absolute;}
+.ͼ1.cm-focused > .cm-scroller > .cm-cursorLayer .cm-cursor {display: block;}
+.ͼ1 .cm-iso {unicode-bidi: isolate;}
+.ͼ1 .cm-announced {position: fixed; top: -10000px;}
+@media print {.ͼ1 .cm-announced {display: none;}}
+.ͼ2 .cm-activeLine {background-color: #cceeff44;}
+.ͼ3 .cm-activeLine {background-color: #99eeff33;}
+.ͼ2 .cm-specialChar {color: red;}
+.ͼ3 .cm-specialChar {color: #f78;}
+.ͼ1 .cm-gutters {flex-shrink: 0; display: flex; height: 100%; box-sizing: border-box; z-index: 200;}
+.ͼ1 .cm-gutters-before {inset-inline-start: 0;}
+.ͼ1 .cm-gutters-after {inset-inline-end: 0;}
+.ͼ2 .cm-gutters.cm-gutters-before {border-right-width: 1px;}
+.ͼ2 .cm-gutters.cm-gutters-after {border-left-width: 1px;}
+.ͼ2 .cm-gutters {background-color: #f5f5f5; color: #6c6c6c; border: 0px solid #ddd;}
+.ͼ3 .cm-gutters {background-color: #333338; color: #ccc;}
+.ͼ1 .cm-gutter {display: flex !important; flex-direction: column; flex-shrink: 0; box-sizing: border-box; min-height: 100%; overflow: hidden;}
+.ͼ1 .cm-gutterElement {box-sizing: border-box;}
+.ͼ1 .cm-lineNumbers .cm-gutterElement {padding: 0 3px 0 5px; min-width: 20px; text-align: right; white-space: nowrap;}
+.ͼ2 .cm-activeLineGutter {background-color: #e2f2ff;}
+.ͼ3 .cm-activeLineGutter {background-color: #222227;}
+.ͼ1 .cm-panels {box-sizing: border-box; position: sticky; left: 0; right: 0; z-index: 300;}
+.ͼ2 .cm-panels {background-color: #f5f5f5; color: black;}
+.ͼ2 .cm-panels-top {border-bottom: 1px solid #ddd;}
+.ͼ2 .cm-panels-bottom {border-top: 1px solid #ddd;}
+.ͼ3 .cm-panels {background-color: #333338; color: white;}
+.ͼ1 .cm-dialog label {font-size: 80%;}
+.ͼ1 .cm-dialog {padding: 2px 19px 4px 6px; position: relative;}
+.ͼ1 .cm-dialog-close {position: absolute; top: 3px; right: 4px; background-color: inherit; border: none; font: inherit; font-size: 14px; padding: 0;}
+.ͼ1 .cm-tab {display: inline-block; overflow: hidden; vertical-align: bottom;}
+.ͼ1 .cm-widgetBuffer {vertical-align: text-top; height: 1em; width: 0; display: inline;}
+.ͼ1 .cm-placeholder {color: #888; display: inline-block; vertical-align: top; user-select: none;}
+.ͼ1 .cm-highlightSpace {background-image: radial-gradient(circle at 50% 55%, #aaa 20%, transparent 5%); background-position: center;}
+.ͼ1 .cm-highlightTab {background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="20"><path stroke="%23888" stroke-width="1" fill="none" d="M1 10H196L190 5M190 15L196 10M197 4L197 16"/></svg>'); background-size: auto 100%; background-position: right 90%; background-repeat: no-repeat;}
+.ͼ1 .cm-trailingSpace {background-color: #ff332255;}
+.ͼ1 .cm-button {vertical-align: middle; color: inherit; font-size: 70%; padding: .2em 1em; border-radius: 1px;}
+.ͼ2 .cm-button:active {background-image: linear-gradient(#b4b4b4, #d0d3d6);}
+.ͼ2 .cm-button {background-image: linear-gradient(#eff1f5, #d9d9df); border: 1px solid #888;}
+.ͼ3 .cm-button:active {background-image: linear-gradient(#111, #333);}
+.ͼ3 .cm-button {background-image: linear-gradient(#393939, #111); border: 1px solid #888;}
+.ͼ1 .cm-textfield {vertical-align: middle; color: inherit; font-size: 70%; border: 1px solid silver; padding: .2em .5em;}
+.ͼ2 .cm-textfield {background-color: white;}
+.ͼ3 .cm-textfield {border: 1px solid #555; background-color: inherit;}
+.ͼ1 .cm-foldPlaceholder {background-color: #eee; border: 1px solid #ddd; color: #888; border-radius: .2em; margin: 0 1px; padding: 0 1px; cursor: pointer;}
+.ͼ1 .cm-foldGutter span {padding: 0 1px; cursor: pointer;}
+ /* set the styles */
+
+.password-second-confirm {
+  font-weight: bold;
+}
+
+.password-disclaimer {
+  font-weight: bold;
+}
+
+.encryptionmethod-second-confirm {
+  font-weight: bold;
+}
+
+.settings-auth-related {
+  border-top: 1px solid var(--background-modifier-border);
+  padding-top: 18px;
+}
+
+.settings-percentage-custom-hide {
+  display: none;
+}
+
+.settings-encryption-method-hide {
+  display: none;
+}
+
+.s3-disclaimer {
+  font-weight: bold;
+}
+.s3-hide {
+  display: none;
+}
+
+.dropbox-disclaimer {
+  font-weight: bold;
+}
+.dropbox-hide {
+  display: none;
+}
+
+.dropbox-auth-button-hide {
+  display: none;
+}
+
+.dropbox-revoke-auth-button-hide {
+  display: none;
+}
+
+.onedrive-disclaimer {
+  font-weight: bold;
+}
+.onedrive-hide {
+  display: none;
+}
+
+.onedrive-auth-button-hide {
+  display: none;
+}
+
+.onedrive-revoke-auth-button-hide {
+  display: none;
+}
+
+.onedrivefull-allow-to-use-hide {
+  display: none;
+}
+
+.onedrivefull-disclaimer {
+  font-weight: bold;
+}
+.onedrivefull-hide {
+  display: none;
+}
+
+.onedrivefull-auth-button-hide {
+  display: none;
+}
+
+.onedrivefull-revoke-auth-button-hide {
+  display: none;
+}
+
+.webdav-disclaimer {
+  font-weight: bold;
+}
+.webdav-hide {
+  display: none;
+}
+
+.webdav-customheaders-textarea {
+  font-family: monospace;
+}
+
+.webdis-disclaimer {
+  font-weight: bold;
+}
+.webdis-hide {
+  display: none;
+}
+
+.googledrive-disclaimer {
+  font-weight: bold;
+}
+.googledrive-hide {
+  display: none;
+}
+
+.googledrive-allow-to-use-hide {
+  display: none;
+}
+
+.googledrive-auth-button-hide {
+  display: none;
+}
+
+.googledrive-revoke-auth-button-hide {
+  display: none;
+}
+
+.box-disclaimer {
+  font-weight: bold;
+}
+.box-hide {
+  display: none;
+}
+
+.box-allow-to-use-hide {
+  display: none;
+}
+
+.box-auth-button-hide {
+  display: none;
+}
+
+.box-revoke-auth-button-hide {
+  display: none;
+}
+
+.pcloud-disclaimer {
+  font-weight: bold;
+}
+.pcloud-hide {
+  display: none;
+}
+
+.pcloud-allow-to-use-hide {
+  display: none;
+}
+
+.pcloud-auth-button-hide {
+  display: none;
+}
+
+.pcloud-revoke-auth-button-hide {
+  display: none;
+}
+
+.yandexdisk-disclaimer {
+  font-weight: bold;
+}
+.yandexdisk-hide {
+  display: none;
+}
+
+.yandexdisk-allow-to-use-hide {
+  display: none;
+}
+
+.yandexdisk-auth-button-hide {
+  display: none;
+}
+
+.yandexdisk-revoke-auth-button-hide {
+  display: none;
+}
+
+.koofr-disclaimer {
+  font-weight: bold;
+}
+.koofr-hide {
+  display: none;
+}
+
+.koofr-allow-to-use-hide {
+  display: none;
+}
+
+.koofr-auth-button-hide {
+  display: none;
+}
+
+.koofr-revoke-auth-button-hide {
+  display: none;
+}
+
+.azureblobstorage-disclaimer {
+  font-weight: bold;
+}
+.azureblobstorage-hide {
+  display: none;
+}
+
+.azureblobstorage-allow-to-use-hide {
+  display: none;
+}
+
+.qrcode-img {
+  width: 350px;
+  height: 350px;
+}
+
+.ignorepaths-textarea {
+  font-family: monospace;
+}
+
+.onlyallowpaths-textarea {
+  font-family: monospace;
+}
+
+.logtohttpserver-warning {
+  color: red;
+  font-weight: bolder;
+}
+
+.setting-need-wrapping .setting-item-control {
+  /* flex-wrap: wrap; */
+  display: grid;
+}
+
+.pro-disclaimer {
+  font-weight: bold;
+}
+.pro-hide {
+  display: none;
+}
+
+.pro-auth-button-hide {
+  display: none;
+}
+
+.pro-revoke-auth-button-hide {
+  display: none;
+}
+ .plugin.unicode-search.result-item{display:flex;gap:1em;justify-content:flex-start;align-items:center}.plugin.unicode-search.result-item>.character-preview{font-size:1.5em;width:1.75em;display:flex;justify-content:center;align-items:center}.plugin.unicode-search.result-item>.character-match{flex-grow:1;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;column-gap:1em;row-gap:.05em;min-height:2.5em}@media (min-width: 40em){.plugin.unicode-search.result-item>.character-match{flex-direction:row;justify-content:space-between;align-items:center}}.plugin.unicode-search.result-item>.character-match>.character-codepoint{color:var(--code-normal);font-family:var(--font-monospace);font-size:var(--code-size);letter-spacing:.055em;text-transform:uppercase}@media (min-width: 40em){.plugin.unicode-search.result-item>.character-match>.character-codepoint{border-radius:var(--radius-s);background-color:var(--code-background);padding:.1em .3em}}.plugin.unicode-search.result-item>.character-match>.character-codepoint:before{content:"U+";letter-spacing:.15em}.plugin.unicode-search.result-item>.character-match>.character-codepoint>.suggestion-highlight{color:var(--text-normal)}.plugin.unicode-search.result-item>.detail{display:flex;flex-direction:row;justify-content:flex-end;align-items:center;gap:.5em}.plugin.unicode-search.result-item>.detail>.attributes{display:flex;flex-direction:column;justify-content:center;align-items:center;font-size:var(--font-smallest);width:1.25em}.plugin.unicode-search .icon{color:var(--icon-color);opacity:var(--icon-opacity)}.plugin.unicode-search .icon:hover{color:var(--icon-color-hover);opacity:var(--icon-opacity-hover)}.plugin.unicode-search .icon:hover.interactive{color:var(--interactive-accent-hover)}.plugin.unicode-search.setting-tab .group-container{gap:1em;flex-direction:column;align-items:stretch;align-content:stretch;flex-wrap:wrap;justify-content:flex-start}.plugin.unicode-search.setting-tab .group-container:not(.hidden){display:flex}.plugin.unicode-search.setting-tab .group-container.hidden{display:none}.plugin.unicode-search.setting-tab .item-container{border:1px solid var(--background-modifier-border);border-radius:var(--radius-s);padding:.5em .75em;background-color:var(--background-primary-alt)}@media (min-width: 40em){.plugin.unicode-search.setting-tab .item-container>.setting-item.setting-item-heading{margin:.75em 0}}.plugin.unicode-search.setting-tab .item-container>.setting-item.setting-item-heading>.setting-item-info{flex-grow:1}.plugin.unicode-search.setting-tab .item-container>.setting-item.setting-item-heading>.setting-item-info>.setting-item-name{display:flex;flex-direction:row;flex-wrap:wrap;justify-content:space-between;align-items:center}.plugin.unicode-search.setting-tab .item-container>.setting-item.setting-item-heading>.setting-item-control{flex-grow:0}@media (min-width: 40em){.plugin.unicode-search.setting-tab .blocks-list .setting-item>.setting-item-info{display:inline-flex;flex-direction:row;flex-wrap:wrap;justify-content:space-between;align-items:center}.plugin.unicode-search.setting-tab .blocks-list .setting-item>.setting-item-info>.setting-item-name{font-size:90%}.plugin.unicode-search.setting-tab .blocks-list .setting-item>.setting-item-info>.setting-item-description{padding-top:0}.plugin.unicode-search.setting-tab .blocks-list .setting-item>.setting-item-control{flex-grow:0}}.plugin.unicode-search.setting-tab .monospace{color:var(--code-normal);font-family:var(--font-monospace)}.plugin.unicode-search.setting-tab .character-codepoint{letter-spacing:.055em;text-transform:uppercase;font-size:var(--code-size)}@media (min-width: 40em){.plugin.unicode-search.setting-tab .character-codepoint{border-radius:var(--radius-s);background-color:var(--code-background);padding:.1em .3em}}.plugin.unicode-search.setting-tab .character-codepoint>.suggestion-highlight{color:var(--text-normal)}
+ #cMenuToolbarModalBar {
+  width: auto;
+  height: auto;
+  padding: 3px;
+  display: grid;
+  user-select: none;
+  border-radius: var(--radius-m);
+  position: absolute;
+  transition: 100ms cubic-bezier(0.92, -0.53, 0.65, 1.21);
+  -webkit-transition: 100ms cubic-bezier(0.92, -0.53, 0.65, 1.21);
+  min-width: fit-content;
+  justify-content: space-around;
+  z-index: var(--layer-modal);
+
+}
+
+#cMenuToolbarModalBar.cMenuToolbarFlex {
+  display: flex;
+}
+
+#cMenuToolbarModalBar.cMenuToolbarFlex :is(.cMenuToolbarCommandItem, button[class^=cMenuToolbarCommandsubItem]) {
+  min-width: 20px;
+}
+
+#cMenuToolbarModalBar .cMenuToolbarCommandItem {
+  margin: 2px;
+  border: none;
+  display: flex;
+  cursor: default;
+  padding: 5px 6px;
+  box-shadow: none;
+  margin-left: 3px;
+  margin-right: 3px;
+  position: relative;
+  border-radius: var(--radius-s);
+  font-size: initial !important;
+  background-color: var(--background-primary-alt);
+  height: auto;
+}
+
+:is(#cMenuToolbarModalBar, #cMenuToolbarPopoverBar) button[class^=cMenuToolbarCommandsubItem]>.subitem button:hover,
+:is(#cMenuToolbarModalBar, #cMenuToolbarPopoverBar) button[class^=cMenuToolbarCommand]:hover,
+#cMenuToolbarSecond:hover {
+  background-color: var(--background-modifier-hover) !important;
+}
+
+/* #cMenuToolbarModalBar button.cMenuToolbarCommandItem svg {
+  width: 1.3em;
+  height: 1.3em;
+} */
+
+/*----------------------------------------------------------------
+cMenuToolbar SETTINGS BUTTONS
+----------------------------------------------------------------*/
+
+.modal.mod-settings button:not(.mod-cta):not(.mod-warning).cMenuToolbarSettingsButton.cMenuToolbarSettingsButtonAdd,
+button:not(.mod-cta):not(.mod-warning).cMenuToolbarSettingsButton.cMenuToolbarSettingsButtonAdd {
+  background-color: var(--interactive-accent);
+}
+
+.modal.mod-settings button:not(.mod-cta):not(.mod-warning).cMenuToolbarSettingsButton.cMenuToolbarSettingsButtonDelete,
+button:not(.mod-cta):not(.mod-warning).cMenuToolbarSettingsButton.cMenuToolbarSettingsButtonDelete {
+  background-color: #989cab;
+}
+
+.modal.mod-settings button:not(.mod-cta):not(.mod-warning).cMenuToolbarSettingsButton.cMenuToolbarSettingsButtonRefresh,
+button:not(.mod-cta):not(.mod-warning).cMenuToolbarSettingsButton.cMenuToolbarSettingsButtonRefresh {
+  background-color: var(--text-accent);
+}
+
+button.cMenuToolbarSettingsButton {
+  padding: 4px 14px;
+  border-radius: var(--radius-m);
+}
+
+
+
+/*----------------------------------------------------------------
+cMenuToolbar SETTING ITEMS
+----------------------------------------------------------------*/
+.setting-item.cMenuToolbarCommandItem:first-child {
+  padding-top: 18px;
+}
+
+.cMenuToolbarCommandItem {
+  cursor: grab;
+  padding: 18px 0 18px 0;
+}
+
+.cMenuToolbarSettingsTabsContainer .sortable-fallback {
+  cursor: grabbing;
+  box-shadow: 0px 3px 32px rgb(31 38 135 / 15%);
+}
+
+.cMenuToolbarSettingsTabsContainer .sortable-grab {
+  cursor: grabbing !important;
+}
+
+.cMenuToolbarSettingsTabsContainer .sortable-ghost {
+  opacity: 0.4;
+  cursor: grabbing;
+}
+
+.cMenuToolbarSettingsTabsContainer .sortable-chosen {
+  cursor: grabbing;
+  padding: 18px 0 18px 18px;
+  background-color: var(--color-base-10, --background-primary);
+}
+
+.cMenuToolbarSettingsTabsContainer .sortable-drag {
+  cursor: grabbing;
+  box-shadow: 0px 3px 32px rgb(31 38 135 / 15%);
+}
+
+.cMenuToolbarSettingsTabsContainer {
+  border-top: 1px solid var(--background-modifier-border);
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+/*----------------------------------------------------------------
+cMenuToolbar CLASS CHANGES
+----------------------------------------------------------------*/
+
+#cMenuToolbarModalBar.cMenuToolbarDefaultAesthetic {
+  border: 1px solid var(--background-modifier-border);
+}
+
+#cMenuToolbarModalBar.cMenuToolbarDefaultAesthetic:not(.top) :is(.cMenuToolbarCommandItem, button[class^=cMenuToolbarCommandsubItem]) {
+  min-height: 28px;
+}
+
+#cMenuToolbarModalBar.cMenuToolbarDefaultAesthetic:not(.top) button[class^=cMenuToolbarCommandsubItem] {
+  margin: auto;
+  padding: 6px;
+  box-shadow: none;
+  border: none;
+  background-color: transparent;
+
+  place-items: center;
+
+}
+
+.cMenuToolbarDefaultAesthetic {
+  background-color: var(--color-base-10, --background-primary);
+}
+
+
+#cMenuToolbarModalBar.cMenuToolbarGlassAesthetic,
+#cMenuToolbarModalBar.cMenuToolbarGlassAesthetic~#cMenuToolbarPopoverBar {
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow: none;
+  background-color: transparent;
+}
+
+#cMenuToolbarModalBar.cMenuToolbarGlassAesthetic:not(.top) button[class^=cMenuToolbarCommandsubItem] {
+  margin: auto;
+  padding: 0px;
+  box-shadow: none;
+  border: none;
+  display: flex;
+  border-radius: var(--radius-s);
+  font-size: 10px;
+  margin-right: 0px;
+  position: relative;
+  background-color: transparent;
+  place-items: center;
+  clear: both;
+  max-width: 28px;
+  max-height: 23px;
+}
+
+/*----------------------------------------------------------------
+cMenuToolbar ICONS
+----------------------------------------------------------------*/
+
+.cMenuToolbarIconPick {
+  line-height: normal;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+.cMenuToolbarIconPick svg {
+  width: 17px;
+  height: 17px;
+}
+
+/*----------------------------------------------------------------
+cMenuToolbar STATUS BAR MENU
+----------------------------------------------------------------*/
+
+.cMenuToolbar-statusbar-menu {
+  text-align: center;
+  width: 200px;
+}
+
+
+.cMenuToolbar-statusbar-menu .menu-item {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.cMenuToolbar-statusbar-menu .menu-item.settings-item {
+  font-size: 12px;
+  text-align: center;
+  line-height: 1;
+  border-radius: var(--radius-m);
+  height: auto;
+  padding: 8px 5px 0px 5px;
+  margin: 0 auto;
+  width: fit-content;
+  color: var(--text-faint);
+}
+
+.cMenuToolbar-statusbar-menu .menu-item.settings-item .menu-item-title {
+  text-align: center;
+}
+
+.cMenuToolbar-statusbar-menu .menu-item:hover,
+.cMenuToolbar-statusbar-menu .menu-item .selected:hover,
+.cMenuToolbar-statusbar-menu .menu-item.selected:not(.is-disabled):not(.is-label) {
+  background-color: transparent;
+}
+
+.cMenuToolbar-statusbar-menu .menu-item-title {
+  margin-right: 10px;
+}
+
+.cMenuToolbar-statusbar-menu .slider {
+  width: 100%;
+}
+
+.cMenuToolbar-statusbar-menu .menu-item.buttonitem {
+  padding-top: 10px;
+  padding-bottom: 4px;
+  height: fit-content;
+}
+
+.cMenuToolbar-statusbar-menu .menu-item.buttonitem button.cMenuToolbarSettingsButton {
+  margin: 0;
+}
+
+.cMenuToolbar-statusbar-menu .menu-item-icon svg path {
+  fill: var(--text-muted);
+}
+
+.cMenuToolbar-statusbar-menu .menu-item-icon svg {
+  stroke: var(--text-muted);
+}
+
+.cMenuToolbar-statusbar-menu>.menu-item:is([data-section="ButtonAdd"]) {
+  display: inline-flex;
+  padding: 0px 0px 5px 5px;
+  align-items: center;
+}
+
+.cMenuToolbar-statusbar-menu>.menu-item {
+  display: inline-flex;
+  padding: 0px 0px 5px 5px;
+  align-items: center;
+}
+
+.cMenuToolbar-statusbar-menu>.menu-item:is([data-section="ButtonAdd"]) .menu-item-icon {
+  text-align: center;
+}
+
+
+/*----------------------------------------------------------------
+cMenuToolbar STATUS BAR BUTTONS
+----------------------------------------------------------------*/
+
+.cMenuToolbar-statusbar-button {
+  cursor: default;
+  display: flex;
+  align-items: center;
+  line-height: 1;
+}
+
+.cMenuToolbar-statusbar-button svg {
+  display: flex;
+  width: 1.3em;
+  height: 1.3em;
+}
+
+/*----------------------------------------------------------------
+cMenuToolbar SUPPORT
+---------------------------------------------`-------------------*/
+
+.cDonationSection {
+  width: 60%;
+  height: 50vh;
+  margin: 0 auto;
+  text-align: center;
+  color: var(--text-normal);
+}
+
+
+#cMenuToolbarModalBar {
+  align-items: center;
+  justify-items: center;
+  border: none;
+  backdrop-filter: none;
+}
+
+#cMenuToolbarModalBar.cMenuToolbarGlassAesthetic .cMenuToolbarCommandItem {
+
+  background-color: #ffffff00;
+}
+
+#cMenuToolbarModalBar.cMenuToolbarGlassAesthetic [class^=cMenuToolbarCommandsubItem] {
+
+  background-color: #ffffff00;
+}
+
+#cMenuToolbarModalBar .cMenuToolbarCommandItem {
+  justify-content: center;
+  align-content: center;
+  place-items: center;
+
+}
+
+
+/*  #cMenuToolbarModalBar.cMenuToolbarTinyAesthetic .cMenuToolbarCommandItem svg{
+     width: 1em;
+     height: 1em;
+ } */
+
+
+
+div.modal-container.cMenuToolbar-Modal:not(.changename) .modal-bg {
+  background-color: transparent !important;
+  backdrop-filter: none !important;
+  position: relative;
+}
+
+.modal-container.cMenuToolbar-Modal:not(.changename) .modal {
+  padding: 10px 30px;
+  min-width: 130px;
+  position: absolute;
+  bottom: 2em;
+  right: 0.5em;
+  background-color: rgb(var(--mono-rgb-0), 0.8);
+  backdrop-filter: blur(4px);
+}
+
+.modal-container.cMenuToolbar-Modal .modal-title {
+  display: none;
+}
+
+.modal-container.cMenuToolbar-Modal .modal input[type='range'] {
+  width: 90%;
+
+}
+
+body.theme-dark .modal-container.cMenuToolbar-Modal .modal input[type='range'] {
+  background-color: var(--background-secondary);
+}
+
+/*tiny 样式*/
+#cMenuToolbarModalBar.cMenuToolbarTinyAesthetic {
+  align-items: center;
+  justify-items: center;
+  border: 1px solid var(--background-modifier-border-hover);
+  backdrop-filter: none;
+  background-color: var(--background-secondary);
+}
+
+
+#cMenuToolbarModalBar.cMenuToolbarTinyAesthetic .cMenuToolbarCommandItem {
+  margin: auto;
+  padding: 0px;
+  box-shadow: none;
+  margin-left: 0px;
+  margin-right: 0px;
+  position: relative;
+  background-color: transparent;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+}
+
+#cMenuToolbarModalBar .cMenuToolbarCommandItem {
+  margin: auto;
+
+  padding: 0px;
+  box-shadow: none;
+
+  margin-left: 4px;
+  margin-right: 0px;
+  position: relative;
+  background-color: transparent;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+}
+
+
+:is(#cMenuToolbarModalBar).cMenuToolbarTinyAesthetic:not(.top) button[class^=cMenuToolbarCommandsubItem] {
+  margin: auto;
+  padding: 0px;
+  box-shadow: none;
+  border: none;
+  display: flex;
+  border-radius: var(--radius-s);
+  font-size: 10px;
+  margin-right: 0px;
+  position: relative;
+  background-color: transparent;
+
+  place-items: center;
+  clear: both;
+  max-width: 28px;
+  max-height: 18px;
+
+}
+
+button[class^=cMenuToolbarCommandsubItem]::after {
+
+  content: url("data:image/svg+xml,%3Csvg width='4' height='4' version='1.1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 1024' enable-background='new 0 0 1024 1024' xml:space='preserve'%3E%3Cpath fill='%23666' d='M13.24 80.11 l461.75 560.8 q14.56 16.02 36.41 16.02 q21.85 0 36.42 -16.02 l463.2 -560.8 q10.2 -10.19 12.38 -24.75 q2.18 -14.57 -3.64 -27.68 q-5.82 -13.11 -18.21 -20.39 q-12.39 -7.29 -26.95 -7.29 l-924.95 0 q-20.4 0 -34.23 13.11 q-13.84 13.11 -15.29 32.77 q-1.46 19.66 13.11 34.23 Z'/%3E%3C/svg%3E");
+
+  margin-left: 1px;
+  margin-top: 6px;
+
+}
+
+
+:is(#cMenuToolbarModalBar, #cMenuToolbarPopoverBar) button[class^=cMenuToolbarCommandsubItem]>.subitem {
+  background-color: var(--color-base-10, --background-primary);
+  border-radius: var(--radius-s);
+  border: 1px solid var(--background-modifier-border);
+
+  position: absolute;
+  z-index: var(--layer-menu);
+  user-select: none;
+  transform: translateY(90%) translateX(0%);
+  -webkit-transform: translateY(90%) translateX(0%);
+  display: flex;
+
+}
+
+:is(#cMenuToolbarModalBar, #cMenuToolbarPopoverBar) button[class^=cMenuToolbarCommandsubItem]>.subitem svg {
+  max-width: 1.3em;
+  max-height: 1.3em;
+}
+
+:is(#cMenuToolbarModalBar, #cMenuToolbarPopoverBar) button[class^=cMenuToolbarCommandsubItem]>.subitem button.menu-item {
+  background-color: transparent;
+  line-height: 2em;
+  display: inline-flex;
+  box-shadow: none;
+  align-items: center;
+}
+
+:is(#cMenuToolbarModalBar, #cMenuToolbarPopoverBar) button[class^=cMenuToolbarCommandsubItem]>.subitem .menu-item {
+  margin-left: 2px;
+  margin-right: 2px;
+  padding: 0px 4px 0px 4px;
+}
+
+:is(#cMenuToolbarModalBar, #cMenuToolbarPopoverBar) button[class^=cMenuToolbarCommandsubItem]>.subitem {
+
+  visibility: hidden;
+  transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+}
+
+
+
+
+
+:is(#cMenuToolbarModalBar, #cMenuToolbarPopoverBar) button.cMenuToolbarCommandsubItem-font-color .triangle-icon {
+  position: absolute;
+  margin-left: 18px;
+  bottom: 8%;
+  background-size: 4px 4px;
+  background-image: url("data:image/svg+xml,%3Csvg width='4' height='4' version='1.1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 1024' enable-background='new 0 0 1024 1024' xml:space='preserve'%3E%3Cpath fill='%23666' d='M13.24 80.11 l461.75 560.8 q14.56 16.02 36.41 16.02 q21.85 0 36.42 -16.02 l463.2 -560.8 q10.2 -10.19 12.38 -24.75 q2.18 -14.57 -3.64 -27.68 q-5.82 -13.11 -18.21 -20.39 q-12.39 -7.29 -26.95 -7.29 l-924.95 0 q-20.4 0 -34.23 13.11 q-13.84 13.11 -15.29 32.77 q-1.46 19.66 13.11 34.23 Z'/%3E%3C/svg%3E");
+
+  width: 16px;
+  height: 20px;
+  background-position: center;
+
+  background-repeat: no-repeat;
+  min-width: unset;
+  border-left: 2px solid transparent;
+}
+
+:is(#cMenuToolbarModalBar, #cMenuToolbarPopoverBar):not(.top) button.cMenuToolbarCommandsubItem-font-color .triangle-icon {
+  margin-left: 16px;
+
+}
+
+:is(#cMenuToolbarModalBar, #cMenuToolbarPopoverBar):not(.top) button.cMenuToolbarCommandsubItem-font-color .x-color-picker-wrapper {
+  top: auto;
+  bottom: calc(100%);
+}
+
+:is(#cMenuToolbarModalBar, #cMenuToolbarPopoverBar):not(.top) button[class^=cMenuToolbarCommandsubItem]:not(.cMenuToolbarSecond)>.subitem {
+  bottom: calc(100% + 2.8em);
+}
+
+
+:is(#cMenuToolbarModalBar, #cMenuToolbarPopoverBar) button.cMenuToolbarCommandsubItem-font-color .subitem {
+  visibility: hidden;
+  transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+}
+
+:is(#cMenuToolbarModalBar, #cMenuToolbarPopoverBar) button.cMenuToolbarCommandsubItem-font-color .subitem:hover {
+  visibility: visible;
+  transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+}
+
+
+:is(#cMenuToolbarModalBar, #cMenuToolbarPopoverBar) button[class^=cMenuToolbarCommandsubItem]:hover>.subitem {
+
+  visibility: visible;
+  transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+}
+
+/* :is(#cMenuToolbarModalBar,#cMenuToolbarPopoverBar) button[class^=cMenuToolbarCommandsubItem] >.subitem:hover  {
+  visibility:visible;
+  transition: all 0.3s linear;
+  -webkit-transition:  all 0.3s linear;
+ } */
+
+.cMenuToolbarCommandsubItem-font-color button {
+  background-color: transparent;
+}
+
+
+
+.cMenuToolbarSettingsTabsContainer .cMenuToolbarCommandItem .setting-item-info {
+
+  flex: 30%;
+  margin: 0;
+}
+
+.cMenuToolbarSettingsTabsContainer .cMenuToolbarSettingsTabsContainer_sub {
+  border-left: 1px solid var(--background-modifier-border);
+  flex-flow: column;
+  min-height: 45px;
+  display: flex;
+  padding: 0;
+  margin-left: 10px;
+  flex: 70%;
+}
+
+.cMenuToolbarSettingsTabsContainer .cMenuToolbarSettingsTabsContainer_sub:empty {
+  border: 2px dashed rgba(var(--interactive-accent-rgb), 0.5);
+}
+
+.cMenuToolbarSettingsTabsContainer .cMenuToolbarSettingsTabsContainer_sub:empty::before {
+  content: "✖️Drag it here";
+  margin: auto;
+  font-size: 12px;
+}
+
+.cMenuToolbarSettingsTabsContainer .cMenuToolbarSettingsTabsContainer_sub .cMenuToolbarCommandItem {
+  flex: auto;
+  margin-left: 2em;
+  ;
+}
+
+.cMenuToolbarSettingsTabsContainer .cMenuToolbarSettingsTabsContainer_sub .setting-item-control {
+  flex: 0;
+}
+
+.cMenuToolbarSettingsTabsContainer .cMenuToolbarCommandSubItem>.setting-item-info {
+  flex: 70px;
+}
+
+.cMenuToolbarCommandSubItem>.setting-item-control {
+
+  justify-content: flex-start;
+}
+
+.modal.mod-settings button:not(.mod-cta):not(.mod-warning).cMenuToolbarSettingsButton.cMenuToolbarSettingsButtonaddsub {
+  background-color: var(--background-secondary-alt);
+}
+
+
+.setting-item button.cMenuToolbarSettingsIcon {
+  display: block;
+  transform: translateX(-30%);
+  -webkit-transform: translateX(-30%);
+}
+
+.setting-item button.cMenuToolbarSettingsIcon:empty::before {
+  content: "❗";
+}
+
+.setting-item button.cMenuToolbarSettingsIcon svg {
+  max-width: 1.5em;
+  max-height: 1.5em;
+}
+
+.modal.mod-settings button:not(.mod-cta):not(.mod-warning).cMenuToolbarSettingsIcon:hover {
+  background-color: var(--interactive-accent-hover);
+}
+
+.modal.mod-settings button:not(.mod-cta):not(.mod-warning).cMenuToolbarSettingsIcon {
+  background-color: transparent;
+  box-shadow: 0 1px 1px 0px var(--background-modifier-border);
+}
+
+@media screen and (min-width: 781px) {
+  .cMenuToolbar-Modal .wideInputPromptInputEl {
+    width: 40rem;
+    max-width: 100%;
+    height: 20rem;
+    background-color: rgb(var(--mono-rgb-0), 0.8);
+  }
+}
+
+.cMenuToolbarcustomIcon svg {
+  max-width: 1.3em;
+  max-height: 1.3em;
+  display: flex;
+}
+
+
+.cMenuToolbarSettingsButton svg {
+  max-width: 1.3em;
+  max-height: 1.3em;
+  display: flex;
+}
+
+.cmdr-page-header {
+  min-width: 1em;
+  ;
+}
+
+
+.x-color-picker-wrapper {
+  right: 0px;
+  top: 1.8em;
+  min-width: 1px;
+  padding: 10px;
+  box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14);
+  position: absolute;
+  width: fit-content;
+  font-weight: 400;
+  font-family: Source Sans Pro, sans-serif;
+  border-radius: var(--radius-s);
+  background-color: var(--color-base-10, --background-primary);
+}
+
+.markdown-source-view.mod-cm6 .x-color-picker-wrapper table.x-color-picker-table#x-color-picker-table {
+  width: unset;
+  border-collapse: separate;
+  border-spacing: 6px;
+  margin: auto !important;
+}
+
+.x-color-picker-wrapper table.x-color-picker-table#x-backgroundcolor-picker-table {
+  width: unset;
+  border-collapse: separate;
+  border-spacing: 6px;
+  margin: auto !important;
+}
+
+.x-color-picker-wrapper .x-color-picker-table th {
+  border: 0;
+  text-align: left;
+  font-weight: normal;
+  background: transparent !important;
+  color: #718096;
+}
+
+.x-color-picker-wrapper #x-color-picker-table td {
+  font-size: 1px;
+  padding: 9px;
+  cursor: default;
+  border: solid 1px var(--background-modifier-border);
+}
+
+.x-color-picker-wrapper #x-backgroundcolor-picker-table td {
+  font-size: 1px;
+  border-radius: 50%;
+  padding: 9px;
+  cursor: default;
+  border: solid 1px var(--background-modifier-border);
+}
+
+.x-color-picker-wrapper .x-color-picker-table tr td:hover {
+  filter: brightness(1.2);
+  box-shadow: 0 3px 6px -4px rgba(0, 0, 0, .12), 0 6px 16px 0 rgba(0, 0, 0, .08), 0 9px 28px 8px rgba(0, 0, 0, .05);
+}
+
+/* .x-color-picker-wrapper tbody>tr:hover {
+  background-color: transparent !important;
+} */
+
+/**top**/
+#cMenuToolbarModalBar.top {
+  display: flex;
+  flex-wrap: nowrap;
+  position: relative;
+  height: 38px;
+  align-items: center;
+  transition: all 0.2s linear;
+  -webkit-transition: all 0.2s linear;
+
+}
+
+#cMenuToolbarModalBar.top.autohide {
+  opacity: 0;
+  transition: all 0.5s linear;
+  -webkit-transition: all 0.5s linear;
+}
+
+
+#cMenuToolbarModalBar.top.autohide:hover {
+  opacity: 1;
+  transition: all 1s linear;
+  -webkit-transition: all 1s linear;
+}
+
+
+#cMenuToolbarModalBar.top :is(.cMenuToolbarCommandItem, button[class^=cMenuToolbarCommandsubItem]):not(.cMenuToolbar-Divider-Line) {
+  font-size: 10px;
+  margin-right: 0px;
+  clear: both;
+  opacity: 1;
+  flex-shrink: 0;
+  height: 26px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: default;
+  outline: none;
+  box-shadow: none;
+  border-radius: var(--radius-s);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s linear;
+  -webkit-transition: all 0.2s linear;
+
+
+
+
+}
+
+/* #cMenuToolbarModalBar.top button.cMenuToolbarCommandItem:hover {
+  background-color: var(--interactive-hover);
+} */
+
+
+
+#cMenuToolbarPopoverBar {
+
+  padding: 0 10px;
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  z-index: var(--layer-popover);
+  background-color: var(--color-base-10, --background-primary);
+  background-clip: padding-box;
+  border-radius: var(--radius-m);
+
+  margin-left: auto;
+  margin-right: 25px;
+  transition: all 0.1s linear;
+  -webkit-transition: all 0.1s linear;
+  margin-top: 32px;
+  position: absolute;
+  right: 0;
+}
+
+#cMenuToolbarPopoverBar :is(.cMenuToolbarCommandItem, button[class^=cMenuToolbarCommandsubItem]) {
+
+  height: 26px;
+  margin-left: 4px;
+  font-size: 10px;
+  margin-right: 4px;
+  clear: both;
+  opacity: 1;
+  flex-shrink: 0;
+  height: 26px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: default;
+  outline: none;
+  box-shadow: none;
+  border-radius: var(--radius-s);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s linear;
+  -webkit-transition: all 0.2s linear;
+
+}
+
+#cMenuToolbarModalBar .more-menu {
+  display: flex;
+  align-items: center;
+  box-shadow: none;
+  margin-left: 4px;
+  border-left: 1px inset var(--background-modifier-form-field);
+  height: 24px;
+  opacity: 0.8;
+}
+
+/*Divider-Line**/
+
+.cMenuToolbarSettingsTabsContainer .cMenuToolbar-Divider-Line {
+  padding: 0;
+
+  line-height: 0px;
+  border-left: 200px solid rgba(var(--interactive-accent-rgb), 0.05);
+  border-right: 200px solid rgba(var(--interactive-accent-rgb), 0.05);
+  text-align: center;
+  background: rgba(var(--interactive-accent-rgb), 0.2);
+}
+
+.cMenuToolbarSettingsTabsContainer .cMenuToolbar-Divider-Line .setting-item-control button:not(:last-child) {
+  display: none;
+}
+
+.cMenuToolbarSettingsTabsContainer .cMenuToolbar-Divider-Line .setting-item-info {
+  flex: 1 1 auto;
+}
+
+.cMenuToolbarSettingsTabsContainer .cMenuToolbar-Divider-Line .setting-item-control {
+  justify-content: flex-start;
+}
+
+.cMenuToolbarSettingsTabsContainer .cMenuToolbar-Divider-Line .setting-item-info .setting-item-name {
+  font-size: 12px;
+  text-align: right;
+
+}
+
+.cMenuToolbarSettingsTabsContainer .cMenuToolbar-Divider-Line .setting-item-control button:last-child {
+  padding: 0;
+  background-color: transparent !important;
+}
+
+.cMenuToolbarSettingsTabsContainer .cMenuToolbar-Divider-Line .setting-item-control button:last-child svg {
+  display: none;
+}
+
+.cMenuToolbarSettingsTabsContainer .cMenuToolbar-Divider-Line .setting-item-control button:last-child::before {
+  content: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 1024 1024' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M511.674077 66.707284c-246.52265 0-446.347744 199.835328-446.347744 446.347744s199.825095 446.356954 446.347744 446.356954c246.50423 0 446.348768-199.844537 446.348768-446.356954S758.177284 66.707284 511.674077 66.707284zM744.967424 667.159826c21.8701 21.8701 21.8701 57.310264 0 79.199807-21.8701 21.851681-57.30924 21.851681-79.198783-0.019443L511.674077 592.264045 357.56007 746.359632c-21.8701 21.8701-57.30924 21.851681-79.17934-0.019443s-21.8701-57.290821 0-79.160921L432.493713 513.065262 278.379707 358.950232c-21.8701-21.86089-21.8701-57.328683 0-79.18855 21.8701-21.87931 57.30924-21.87931 79.17934 0l154.114007 154.104797 154.095587-154.104797c21.889543-21.87931 57.32766-21.87931 79.198783-0.010233 21.8701 21.8701 21.8701 57.348126 0 79.207993L590.89128 513.065262 744.967424 667.159826z' fill='%23666666'/%3E%3C/svg%3E");
+}
+
+
+:is(#cMenuToolbarModalBar, #cMenuToolbarPopoverBar) button.cMenuToolbar-Divider-Line
+{
+  min-width: unset;
+  flex-shrink: 0;
+  display: inline-flex;
+  width: 0.6px;
+  background-color: var(--background-modifier-border);
+  height: 22px;
+  opacity: 0.8;
+  margin: 0;
+}
+:is(#cMenuToolbarModalBar, #cMenuToolbarPopoverBar) button[class^=cMenuToolbarCommandsubItem]>.subitem button.menu-item.cMenuToolbar-Divider-Line
+{  min-width: unset;
+  flex-shrink: 0;
+  display: inline-flex;
+  width: 0.6px;
+  background-color: var(--background-modifier-border);
+  height: 22px;
+  opacity: 0.8;
+  margin: 0;
+  padding: 0;
+  height: auto;
+
+}
+
+.theme-dark :is(#cMenuToolbarModalBar, #cMenuToolbarPopoverBar) button.cMenuToolbar-Divider-Line {
+
+  background-color: #4f4f5188;
+
+}
+
+:is(#cMenuToolbarModalBar, #cMenuToolbarPopoverBar) button.cMenuToolbar-Divider-Line svg {
+  display: none;
+}
+
+.workspace-tabs.mod-stacked .workspace-tab-header:not(.is-active)+.workspace-leaf #cMenuToolbarModalBar {
+  opacity: 0;
+}
+
+:is(.cm-line, p) span[style^="background:rgba"] {
+  color: var(--text-normal);
+}
+
+:is(.cm-line, p) span[style^="background:#"] {
+  color: black;
+}
+
+.setting-item.toolbar-cta:after {
+  content: "";
+  position: absolute;
+  top: -10%;
+  width: 104%;
+  left: -2%;
+  height: 120%;
+  outline: 2px solid var(--text-accent);
+  border-radius: 1em;
+  pointer-events: none;
+}
+
+.setting-item.toolbar-cta {
+  position: relative;
+}
+
+.toolbar-pickr  .pcr-last-color,
+.pickr  .pcr-button{
+  background-color: var(--pcr-color);
+}
+.toolbar-pickr .pcr-interaction :not(:is(input.pcr-save,.pcr-result)){
+  display:none;
+}
+.toolbar-pickr .pcr-swatches {
+  display:none;
+}
+.toolbar-pickr {
+  display:flex;
+}
+
+
+div[data-type="thino_view"] .memo-editor-wrapper:has(#cMenuToolbarModalBar)
+{
+    padding-top:0;
+    padding-left:0;
+    padding-right:0;
+}
+
+div[data-type="thino_view"] .memo-editor-wrapper:has(#cMenuToolbarModalBar) .common-tools-wrapper
+{
+   padding-left:16px;
+    padding-right:16px;
+}
+div[data-type="thino_view"] .memo-editor-wrapper #cMenuToolbarModalBar ~ .cm-editor{
+    padding-top:38px;
+    padding-bottom:0px;
+    padding-left:16px;
+    padding-right:16px;
+}
+div[data-type=thino_view] .common-editor-wrapper .common-editor-inputer:has(#cMenuToolbarModalBar)
+{
+  min-height:118px;
+}
+
+div[data-type=thino_view] #cMenuToolbarModalBar.top
+{
+  position:absolute!important;
+  width: 100%;
+}
+body.auto-hide-header .workspace-tab-header-container:hover + .workspace-tab-container .workspace-leaf .workspace-leaf-content>.view-header {
+  margin-top: 0;
+  transition: all 0.1s linear;
+}
+
+body.auto-hide-header .workspace-tab-header-container + .workspace-tab-container .workspace-leaf .workspace-leaf-content>.view-header:hover {
+  margin-top: 0;
+  transition: all 0.6s linear;
+}
+body.auto-hide-header .workspace-tab-header-container + .workspace-tab-container .workspace-leaf .workspace-leaf-content>.view-header {
+  margin-top: -40px;
+  transition: all 0.6s linear;
+}
+ :root {
+  --advanced-tables-helper-size: 28px;
+}
+
+.HyperMD-table-row span.cm-inline-code {
+  font-size: 100%;
+  padding: 0px;
+}
+
+.advanced-tables-buttons>div>.title {
+  font-weight: var(--font-medium);
+  font-size: var(--nav-item-size);
+  color: var(--nav-item-color);
+  text-decoration: underline;
+}
+
+[data-type="advanced-tables-toolbar"] .nav-buttons-container {
+  column-gap: 0.2rem;
+  margin: 0.2rem 0 0.2rem 0;
+  justify-content: start;
+}
+
+[data-type="advanced-tables-toolbar"] .nav-buttons-container::before {
+  min-width: 2.6rem;
+  line-height: var(--advanced-tables-helper-size);
+  font-size: var(--nav-item-size);
+  font-weight: var(--nav-item-weight);
+  color: var(--nav-item-color);
+}
+
+[data-type="advanced-tables-toolbar"] .nav-buttons-container>* {
+  height: var(--advanced-tables-helper-size);
+  line-height: var(--advanced-tables-helper-size);
+}
+
+[data-type="advanced-tables-toolbar"] .nav-buttons-container .nav-action-button {
+  width: var(--advanced-tables-helper-size);
+  height: var(--advanced-tables-helper-size);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--radius-s);
+}
+
+[data-type="advanced-tables-toolbar"] .nav-buttons-container .nav-action-button:hover {
+  background-color: var(--nav-item-background-hover);
+  color: var(--nav-item-color-hover);
+  font-weight: var(--nav-item-weight-hover);
+}
+
+.advanced-tables-row-label {
+  width: 50px;
+}
+
+.widget-icon {
+  width: 20px;
+  height: 20px;
+  fill: var(--text-muted);
+}
+
+.widget-icon:hover {
+  fill: var(--text-normal);
+}
+
+.advanced-tables-csv-export textarea {
+  height: 200px;
+  width: 100%;
+}
+
+.advanced-tables-donation {
+  width: 70%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.advanced-tables-donate-button {
+  margin: 10px;
+} .table-container.s-VU35bhriycJk.s-VU35bhriycJk{display:grid;border-bottom:2px dotted var(--color-base-40);border-top:2px dotted var(--color-base-40);padding-top:var(--size-2-1);padding-bottom:var(--size-2-1);width:100%;height:150px;grid-gap:1px}.table-container.s-VU35bhriycJk div.s-VU35bhriycJk{background:var(--color-base-00);border-radius:var(--radius-s);border:1px solid var(--color-base-40)}.table-container.s-VU35bhriycJk .table-generator-cell.s-VU35bhriycJk{height:var(--size-4-4);width:var(--size-4-4)}div.active.s-VU35bhriycJk.s-VU35bhriycJk{background-color:var(--active-color)}.s-VU35bhriycJk.s-VU35bhriycJk{}.table-generator.s-YxLKubgSvLDy{padding-left:5px;padding-right:5px;width:220px}.table-generator-header.s-YxLKubgSvLDy{display:flex;justify-content:space-between;align-items:center;margin-top:var(--size-4-1);margin-bottom:var(--size-4-1)}.input-table-generator.s-YxLKubgSvLDy{margin-left:var(--size-2-2);margin-right:var(--size-2-2);margin-top:var(--size-4-2);margin-bottom:var(--size-4-2);display:flex;justify-content:space-around;align-items:center}.input-table-generator-row.s-YxLKubgSvLDy,.input-table-generator-col.s-YxLKubgSvLDy{display:flex;justify-content:space-around;align-items:center}button.s-YxLKubgSvLDy{width:80px;height:20px;margin:var(--size-4-1) auto var(--size-4-2);padding:0px 10px;text-align:center;text-decoration:none;display:flex;align-items:center}input.s-YxLKubgSvLDy{width:40px;height:18px;border:1px solid var(--color-base-50);margin-left:var(--size-2-2);border-radius:var(--radius-m);text-align:center}.H1.s-YxLKubgSvLDy{margin-left:auto;margin-right:auto;text-align:center}.s-YxLKubgSvLDy{}.table-generator-align-group.s-XNB-qso0yOHJ{display:flex;align-items:center;flex-direction:row;gap:var(--size-2-2)}.table-generator-align-icon.s-XNB-qso0yOHJ{display:flex;align-items:center;justify-content:center;border-radius:var(--radius-s);padding:var(--size-2-1)}.table-generator-align-icon.s-XNB-qso0yOHJ:not(.active):hover{background-color:var(--background-modifier-hover)}.table-generator-align-icon.active.s-XNB-qso0yOHJ{background-color:var(--background-modifier-border-hover)}.s-XNB-qso0yOHJ{}.table-generator-view {
+    position: absolute;
+    border: 1px solid var(--color-base-50);
+    border-radius: 5px;
+    background-color: var(--color-base-20);
+}
+
+.table-generator-setting-text {
+    min-width: 2.3em;
+    text-align: right;
+}
+
+
+.theme-light .table-generator-view {
+    --color-base-00: #ffffff;
+    --color-base-05: #fcfcfc;
+    --color-base-10: #fafafa;
+    --color-base-20: #f6f6f6;
+    --color-base-25: #e3e3e3;
+    --color-base-30: #e0e0e0;
+    --color-base-35: #d4d4d4;
+    --color-base-40: #bdbdbd;
+    --color-base-50: #ababab;
+    --color-base-60: #707070;
+    --color-base-70: #5a5a5a;
+    --color-base-100: #222222;
+    --active-color: rgb(224 242 254);
+}
+
+.theme-dark .table-generator-view {
+    --color-base-00: #1e1e1e;
+    --color-base-10: #242424;
+    --color-base-20: #262626;
+    --color-base-25: #2a2a2a;
+    --color-base-30: #363636;
+    --color-base-35: #3F3F3F;
+    --color-base-40: #555;
+    --color-base-50: #666;
+    --color-base-60: #999;
+    --color-base-70: #bababa;
+    --color-base-100: #dadada;
+    --active-color: rgb(3 105 161);
+}
+.input-table-generator.s-b7dfVi8Mj3e3{margin-left:var(--size-2-2);margin-right:var(--size-2-2);margin-top:var(--size-4-2);margin-bottom:var(--size-4-2);display:flex;justify-content:space-around;align-items:center}.input-table-generator-width.s-b7dfVi8Mj3e3,.input-table-generator-height.s-b7dfVi8Mj3e3{display:flex;justify-content:space-around;align-items:center}input.s-b7dfVi8Mj3e3{width:70px;height:18px;border:1px solid var(--color-base-50);margin-left:var(--size-2-2);border-radius:var(--radius-m);text-align:center}.s-b7dfVi8Mj3e3{} /*
+
+This CSS file will be included with your plugin, and
+available in the app when your plugin is enabled.
+
+If your plugin does not need CSS, delete this file.
+
+*/
+ img.emoji {
+  height: 1em;
+  width: 1em;
+  margin: 0 0.05em 0 0.1em;
+  vertical-align: -0.1em;
+  display: inline-block;
+}
+
+.emoji-mart,
+.emoji-mart * {
+  box-sizing: border-box;
+  line-height: 1.15;
+}
+
+.emoji-mart {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  display: inline-block;
+  color: #222427;
+  border: 1px solid #d9d9d9;
+  border-radius: 5px;
+  background: #fff;
+}
+
+.emoji-mart .emoji-mart-emoji {
+  padding: 6px !important;
+}
+
+.emoji-mart-bar {
+  border: 0 solid #d9d9d9;
+}
+.emoji-mart-bar:first-child {
+  border-bottom-width: 1px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.emoji-mart-bar:last-child {
+  border-top-width: 1px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.emoji-mart-anchors {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 6px;
+  line-height: 0;
+}
+
+.emoji-mart-anchor {
+  position: relative;
+  display: block;
+  flex: 1 1 auto;
+  color: #858585;
+  text-align: center;
+  padding: 12px 4px !important;
+  overflow: hidden;
+  transition: color .1s ease-out;
+  margin: 0  !important;
+  box-shadow: none !important;
+  background: none !important;
+  border: none  !important;
+}
+.emoji-mart-anchor:focus { outline: 0 }
+.emoji-mart-anchor:hover,
+.emoji-mart-anchor:focus,
+.emoji-mart-anchor-selected {
+  color: #464646;
+}
+
+.emoji-mart-anchor-selected .emoji-mart-anchor-bar {
+  bottom: 0;
+}
+
+.emoji-mart-anchor-bar {
+  position: absolute;
+  bottom: -3px; left: 0;
+  width: 100%; height: 3px;
+  background-color: #464646;
+}
+
+.emoji-mart-anchors i {
+  display: inline-block;
+  width: 100%;
+  max-width: 22px;
+}
+
+.emoji-mart-anchors svg,
+.emoji-mart-anchors img {
+  fill: currentColor;
+  height: 18px;
+  width: 18px;
+}
+
+.emoji-mart-scroll {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 270px;
+  padding: 0 6px 6px 6px;
+  will-change: transform; /* avoids "repaints on scroll" in mobile Chrome */
+}
+
+.emoji-mart-search {
+  margin-top: 6px;
+  padding: 0 6px;
+  position: relative;
+}
+
+.emoji-mart-search input {
+  font-size: 16px;
+  display: block;
+  width: 100%;
+  padding: 5px 25px 6px 10px;
+  border-radius: 5px;
+  border: 1px solid #d9d9d9;
+  outline: 0;
+}
+
+.emoji-mart-search input,
+.emoji-mart-search input::-webkit-search-decoration,
+.emoji-mart-search input::-webkit-search-cancel-button,
+.emoji-mart-search input::-webkit-search-results-button,
+.emoji-mart-search input::-webkit-search-results-decoration {
+  /* remove webkit/blink styles for <input type="search">
+   * via https://stackoverflow.com/a/9422689 */
+  -webkit-appearance: none;
+}
+
+.emoji-mart-search-icon {
+  position: absolute;
+  top: 7px;
+  right: 11px;
+  z-index: 2;
+  padding: 2px 5px 1px;
+  border: none !important;
+  box-shadow: none !important;
+  background: none !important;
+}
+
+.emoji-mart-category .emoji-mart-emoji span {
+  z-index: 1;
+  position: relative;
+  text-align: center;
+  cursor: default;
+}
+
+.emoji-mart-category .emoji-mart-emoji:focus { outline: 0 }
+
+.emoji-mart-category .emoji-mart-emoji:hover:before, 
+.emoji-mart-category .emoji-mart-emoji:focus:before {
+  z-index: 0;
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: #c5c5c5;
+  border-radius: 100%;
+}
+
+.emoji-mart-category-label {
+  z-index: 2;
+  position: relative;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+.emoji-mart-category-label span {
+  display: block;
+  width: 100%;
+  font-weight: 500;
+  padding: 5px 6px;
+  background-color: #fff;
+  background-color: rgba(255, 255, 255, .95);
+}
+
+.emoji-mart-category-list {
+  border-spacing: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.emoji-mart-category-list td {
+  margin: 0;
+  padding: 0;
+}
+
+.emoji-mart-emoji {
+  position: relative;
+  display: inline-block;
+  font-size: 0;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  background: none !important;
+  box-shadow: none !important;
+}
+
+.emoji-mart-emoji-native {
+  font-family: "Segoe UI Emoji", "Segoe UI Symbol", "Segoe UI", "Apple Color Emoji", "Twemoji Mozilla", "Noto Color Emoji", "Android Emoji";
+}
+
+.emoji-mart-no-results {
+  font-size: 14px;
+  text-align: center;
+  padding-top: 70px;
+  color: #858585;
+}
+.emoji-mart-no-results-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.emoji-mart-no-results .emoji-mart-category-label {
+  display: none;
+}
+.emoji-mart-no-results .emoji-mart-no-results-label {
+  margin-top: .2em;
+}
+.emoji-mart-no-results .emoji-mart-emoji:hover:before {
+  content: none;
+}
+
+.emoji-mart-preview {
+  position: relative;
+  height: 70px;
+}
+
+.emoji-mart-preview-emoji,
+.emoji-mart-preview-data,
+.emoji-mart-preview-skins {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.emoji-mart-preview-emoji {
+  left: 12px;
+}
+
+.emoji-mart-preview-data {
+  left: 68px; right: 12px;
+  word-break: break-all;
+}
+
+.emoji-mart-preview-skins {
+  right: 30px;
+  text-align: right;
+}
+
+.emoji-mart-preview-skins.custom {
+  right: 10px;
+  text-align: right;
+}
+
+.emoji-mart-preview-name {
+  font-size: 14px;
+}
+
+.emoji-mart-preview-shortname {
+  font-size: 12px;
+  color: #888;
+}
+.emoji-mart-preview-shortname + .emoji-mart-preview-shortname,
+.emoji-mart-preview-shortname + .emoji-mart-preview-emoticon,
+.emoji-mart-preview-emoticon + .emoji-mart-preview-emoticon {
+  margin-left: .5em;
+}
+
+.emoji-mart-preview-emoticon {
+  font-size: 11px;
+  color: #bbb;
+}
+
+.emoji-mart-title span {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.emoji-mart-title .emoji-mart-emoji {
+  padding: 0;
+}
+
+.emoji-mart-title-label {
+  color: #999A9C;
+  font-size: 26px;
+  font-weight: 300;
+}
+
+.emoji-mart-skin-swatches {
+  font-size: 0;
+  padding: 2px 0;
+  border: 1px solid #d9d9d9;
+  border-radius: 12px;
+  background-color: #fff;
+}
+
+.emoji-mart-skin-swatches.custom {
+  font-size: 0;
+  border: none;
+  background-color: #fff;
+}
+
+.emoji-mart-skin-swatches.opened .emoji-mart-skin-swatch {
+  width: 16px;
+  padding: 0 2px;
+}
+
+.emoji-mart-skin-swatches.opened .emoji-mart-skin-swatch.selected:after {
+  opacity: .75;
+}
+
+.emoji-mart-skin-swatch {
+  display: inline-block;
+  width: 0;
+  vertical-align: middle;
+  transition-property: width, padding;
+  transition-duration: .125s;
+  transition-timing-function: ease-out;
+}
+
+.emoji-mart-skin-swatch:nth-child(1) { transition-delay: 0s }
+.emoji-mart-skin-swatch:nth-child(2) { transition-delay: .03s }
+.emoji-mart-skin-swatch:nth-child(3) { transition-delay: .06s }
+.emoji-mart-skin-swatch:nth-child(4) { transition-delay: .09s }
+.emoji-mart-skin-swatch:nth-child(5) { transition-delay: .12s }
+.emoji-mart-skin-swatch:nth-child(6) { transition-delay: .15s }
+
+.emoji-mart-skin-swatch.selected {
+  position: relative;
+  width: 16px;
+  padding: 0 2px;
+}
+
+.emoji-mart-skin-swatch.selected:after {
+  content: "";
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 4px; height: 4px;
+  margin: -2px 0 0 -2px;
+  background-color: #fff;
+  border-radius: 100%;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .2s ease-out;
+}
+
+.emoji-mart-skin-swatch.custom {
+  display: inline-block;
+  width: 0;
+  height: 38px;
+  overflow: hidden;
+  vertical-align: middle;
+  transition-property: width, height;
+  transition-duration: .125s;
+  transition-timing-function: ease-out;
+  cursor: default;
+}
+
+.emoji-mart-skin-swatch.custom.selected {
+  position: relative;
+  width: 36px;
+  height: 38px;
+  padding: 0 2px 0 0;
+}
+
+.emoji-mart-skin-swatch.custom.selected:after {
+  content: "";
+  width: 0;
+  height: 0;
+}
+
+.emoji-mart-skin-swatches.custom .emoji-mart-skin-swatch.custom:hover {
+  background-color: #f4f4f4;
+  border-radius: 10%;
+}
+
+.emoji-mart-skin-swatches.custom.opened .emoji-mart-skin-swatch.custom {
+  width: 36px;
+  height: 38px;
+  padding: 0 2px 0 0;
+}
+
+.emoji-mart-skin-swatches.custom.opened .emoji-mart-skin-swatch.custom.selected:after {
+  opacity: .75;
+}
+
+.emoji-mart-skin-text.opened {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: left;
+  color: #888;
+  font-size: 11px;
+  padding: 5px 2px;
+  width: 95px;
+  height: 40px;
+  border-radius: 10%;
+  background-color: #fff;
+}
+
+.emoji-mart-skin {
+  display: inline-block;
+  width: 100%;
+  padding-top: 100%;
+  max-width: 12px;
+  border-radius: 100%;
+}
+
+.emoji-mart-skin-tone-1 { background-color: #ffc93a }
+.emoji-mart-skin-tone-2 { background-color: #fadcbc }
+.emoji-mart-skin-tone-3 { background-color: #e0bb95 }
+.emoji-mart-skin-tone-4 { background-color: #bf8f68 }
+.emoji-mart-skin-tone-5 { background-color: #9b643d }
+.emoji-mart-skin-tone-6 { background-color: #594539 }
+
+/* For screenreaders only, via https://stackoverflow.com/a/19758620 */
+.emoji-mart-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/*
+ * Dark mode styles
+ */
+
+.emoji-mart-dark {
+  color: #fff;
+  border-color: #555453;
+  background-color: #222;
+}
+
+.emoji-mart-dark .emoji-mart-bar {
+  border-color: #555453;
+}
+
+.emoji-mart-dark .emoji-mart-search input {
+  color: #fff;
+  border-color: #555453;
+  background-color: #2f2f2f;
+}
+
+.emoji-mart-dark .emoji-mart-search-icon svg {
+  fill: #fff;
+}
+
+.emoji-mart-category .emoji-mart-emoji {
+  background-color: unset !important;
+}
+
+.emoji-mart-anchor {
+  background-color: unset !important;
+}
+
+.emoji-mart-search-icon {
+  background-color: unset !important;
+}
+
+.emoji-mart-dark .emoji-mart-category .emoji-mart-emoji:hover:before,
+.emoji-mart-dark .emoji-mart-category .emoji-mart-emoji:focus:before {
+  background-color: #888;
+}
+
+.emoji-mart-dark .emoji-mart-category-label span {
+  background-color: #222;
+  color: #fff;
+}
+
+.emoji-mart-dark .emoji-mart-skin-swatches {
+  border-color: #555453;
+  background-color: #222;
+}
+
+.emoji-mart-dark .emoji-mart-anchor:hover,
+.emoji-mart-dark .emoji-mart-anchor:focus,
+.emoji-mart-dark .emoji-mart-anchor-selected {
+  color: #bfbfbf;
+}
+
+#emoji-modal {
+  padding: 0px;
+  min-width: unset;
+  width: unset !important;
+}
+
+#emoji-modal > .modal-content {
+  margin-top: 0px;
+}
+
+#emoji-modal > button {
+  background-color: unset;
+  border: 0px !important;
+  box-shadow: 0px !important;
+}
+
+#emoji-modal > .modal-close-button {
+  visibility: hidden;
+} 
+.pandoc-plugin-error {
+    color: red;
+}
+  .MathJax { font-size: 1.3em; } /*------------------------------------------------------------------------------
+               Obsidian Colored Sidebar Items by CyanVoxel v2.0.0               
+
+                   A colored sidebar CSS snippet inspired by
+                   the "Coloured Folders" snippet by Lithou.
+
+This snippet targets folders beginning with numbered prefixes, and applies full
+color formatting based on the root colors listed below. The prefixes are both
+customizable and extensible; feel free to change, add, and remove them based on
+your own titles and vault structure! By default I have a range of 8+1 colors,
+however I've provided some other common colors as a starting point for your own
+customization. Just swap out the color variable names in the prefix groups.
+
+------------------------------------------------------------------------------*/
+
+:root {
+  /* ================================ Colors ================================ */
+  --red: #e22c3c;                /* Default Prefix: None */
+  --red-orange: #e9404b;         /* Default Prefix: None */
+  --orange: #ee6748;             /* Default Prefix: None */
+  --amber: #fa9f50;              /* Default Prefix: None */
+  --yellow: #ffd85e;             /* Default Prefix: None */
+  --lime: #97e768;               /* Default Prefix: None */
+  --mint: #52eea3;               /* Default Prefix: 00 */
+  --cyan: #51e1e9;               /* Default Prefix: 01 */
+  --cool-cyan: #43cfea;          /* Default Prefix: None */
+  --light-blue: #54b6f8;         /* Default Prefix: 02 */
+  --blue: #437cf3;               /* Default Prefix: 03 */
+  --blue-violet: #6f51f4;        /* Default Prefix: None */
+  --violet: #9446f8;             /* Default Prefix: 04 */
+  --purple: #c952ed;             /* Default Prefix: 05 */
+  --magenta: #e54f9b;            /* Default Prefix: 06 */
+  --hot-red: #e3365e;            /* Default Prefix: 07 */
+  --cool-gray: #515768;          /* Default Prefix: 99 */
+
+  --default-text-color: #d0d0d0;
+  --highlight: #fff;
+  --shadow: #0b0c2c;
+
+  --nav-item-weight-hover: bold;
+}
+
+/* Light Theme Specific Properties */
+.theme-light {
+  --contrast-color: var(--shadow);
+  --default-text-color: var(--shadow);
+  --bg-contrast-amount: 70%;
+  --fg-contrast-amount: 30%;
+  --medium-contrast-amount: 60%;
+  --active-contrast-amount: 30%;
+
+  /* Darker Versions of Bright Colors for Light Theme */
+  --yellow: color-mix(in srgb, #ffd85e 90%, var(--shadow));
+  --lime: color-mix(in srgb, #97e768 90%, var(--shadow));
+  --mint: color-mix(in srgb, #52eea3 85%, var(--shadow));
+  --cyan: color-mix(in srgb, #51e1e9 85%, var(--shadow));
+  --cool-cyan: color-mix(in srgb, #43cfea 85%, var(--shadow));
+  --light-blue: color-mix(in srgb, #54b6f8 90%, var(--shadow));
+}
+
+/* Dark Theme Specific Properties */
+.theme-dark {
+  --contrast-color: var(--highlight);
+  --bg-contrast-amount: 15%;
+  --fg-contrast-amount: 40%;
+  --medium-contrast-amount: 20%;
+  --active-contrast-amount: 10%;
+}
+
+/* All Folder Titles */
+.nav-folder-title {
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+/* Narrower Padding on Desktop*/
+/* @media only screen and (min-width: 768px) {
+  .nav-file-title,
+  .nav-folder-title {
+    // padding: 3px 5px 2px 4px !important; 
+    padding-top: 3px !important;
+    padding-right: 5px !important;
+    padding-bottom: 2px !important;
+    padding-left: 15px;
+  }
+}
+ */
+/*
+============================ Folder Title Prefixes =============================
+The following groups of prefixes are divided by the numbering prefix that they
+target. For example, prefix '00' targets any folder titles beginning with '00',
+such as '00 - Maps of Content'. The only other piece of information that changes
+between the prefix groups are the color variables. Change or expand on any of
+these to suit your own folder structure and vault theme!
+*/
+
+/* ------------------------------- 00 Prefix -------------------------------- */
+.nav-folder-title[data-path^="00"] {
+  color: var(--mint);
+  --nav-item-color-hover: color-mix(
+    in srgb,
+    var(--mint) var(--fg-contrast-amount),
+    var(--contrast-color)
+  );
+  --nav-item-background-hover: color-mix(
+    in srgb,
+    var(--mint) var(--bg-contrast-amount),
+    transparent
+  );
+  --background-modifier-border-focus: color-mix(
+    in srgb,
+    var(--mint) 40%,
+    transparent
+  );
+  --nav-collapse-icon-color: color-mix(in srgb, var(--mint) 60%, transparent);
+}
+.nav-folder-title[data-path^="00"]:hover {
+  --nav-collapse-icon-color: color-mix(
+    in srgb,
+    var(--mint) 60%,
+    var(--contrast-color)
+  );
+}
+.tree-item-children .nav-folder:has(.nav-folder-title[data-path^="00"]) {
+  --nav-indentation-guide-color: color-mix(
+    in srgb,
+    var(--mint) var(--medium-contrast-amount),
+    transparent
+  );
+}
+.tree-item-children
+  .nav-folder:has(.nav-folder-title[data-path^="00"])
+  .nav-file-title {
+  color: color-mix(
+    in srgb,
+    var(--mint) var(--medium-contrast-amount),
+    var(--default-text-color)
+  );
+  --nav-item-background-hover: color-mix(
+    in srgb,
+    color-mix(in srgb, var(--mint) 50%, var(--highlight))
+      var(--bg-contrast-amount),
+    transparent
+  );
+  --background-modifier-border-focus: color-mix(
+    in srgb,
+    var(--mint) 40%,
+    transparent
+  );
+  --nav-item-background-active: color-mix(
+    in srgb,
+    var(--mint) var(--active-contrast-amount),
+    transparent
+  );
+}
+
+/* ------------------------------- 01 Prefix -------------------------------- */
+.nav-folder-title[data-path^="01"] {
+  color: var(--cyan);
+  --nav-item-color-hover: color-mix(
+    in srgb,
+    var(--cyan) var(--fg-contrast-amount),
+    var(--contrast-color)
+  );
+  --nav-item-background-hover: color-mix(
+    in srgb,
+    var(--cyan) var(--bg-contrast-amount),
+    transparent
+  );
+  --background-modifier-border-focus: color-mix(
+    in srgb,
+    var(--cyan) 40%,
+    transparent
+  );
+  --nav-collapse-icon-color: color-mix(in srgb, var(--cyan) 60%, transparent);
+}
+.nav-folder-title[data-path^="01"]:hover {
+  --nav-collapse-icon-color: color-mix(
+    in srgb,
+    var(--cyan) 60%,
+    var(--contrast-color)
+  );
+}
+.tree-item-children .nav-folder:has(.nav-folder-title[data-path^="01"]) {
+  --nav-indentation-guide-color: color-mix(
+    in srgb,
+    var(--cyan) var(--medium-contrast-amount),
+    transparent
+  );
+}
+.tree-item-children
+  .nav-folder:has(.nav-folder-title[data-path^="01"])
+  .nav-file-title {
+  color: color-mix(
+    in srgb,
+    var(--cyan) var(--medium-contrast-amount),
+    var(--default-text-color)
+  );
+  --nav-item-background-hover: color-mix(
+    in srgb,
+    color-mix(in srgb, var(--cyan) 50%, var(--highlight))
+      var(--bg-contrast-amount),
+    transparent
+  );
+  --background-modifier-border-focus: color-mix(
+    in srgb,
+    var(--cyan) 40%,
+    transparent
+  );
+  --nav-item-background-active: color-mix(
+    in srgb,
+    var(--cyan) var(--active-contrast-amount),
+    transparent
+  );
+}
+
+/* ------------------------------- 02 Prefix -------------------------------- */
+.nav-folder-title[data-path^="02"] {
+  color: var(--light-blue);
+  --nav-item-color-hover: color-mix(
+    in srgb,
+    var(--light-blue) var(--fg-contrast-amount),
+    var(--contrast-color)
+  );
+  --nav-item-background-hover: color-mix(
+    in srgb,
+    var(--light-blue) var(--bg-contrast-amount),
+    transparent
+  );
+  --background-modifier-border-focus: color-mix(
+    in srgb,
+    var(--light-blue) 40%,
+    transparent
+  );
+  --nav-collapse-icon-color: color-mix(
+    in srgb,
+    var(--light-blue) 60%,
+    transparent
+  );
+}
+.nav-folder-title[data-path^="02"]:hover {
+  --nav-collapse-icon-color: color-mix(
+    in srgb,
+    var(--light-blue) 60%,
+    var(--contrast-color)
+  );
+}
+.tree-item-children .nav-folder:has(.nav-folder-title[data-path^="02"]) {
+  --nav-indentation-guide-color: color-mix(
+    in srgb,
+    var(--light-blue) var(--medium-contrast-amount),
+    transparent
+  );
+}
+.tree-item-children
+  .nav-folder:has(.nav-folder-title[data-path^="02"])
+  .nav-file-title {
+  color: color-mix(
+    in srgb,
+    var(--light-blue) var(--medium-contrast-amount),
+    var(--default-text-color)
+  );
+  --nav-item-background-hover: color-mix(
+    in srgb,
+    color-mix(in srgb, var(--light-blue) 50%, var(--highlight))
+      var(--bg-contrast-amount),
+    transparent
+  );
+  --background-modifier-border-focus: color-mix(
+    in srgb,
+    var(--light-blue) 40%,
+    transparent
+  );
+  --nav-item-background-active: color-mix(
+    in srgb,
+    var(--light-blue) var(--active-contrast-amount),
+    transparent
+  );
+}
+
+/* ------------------------------- 03 Prefix -------------------------------- */
+.nav-folder-title[data-path^="03"] {
+  color: var(--blue);
+  --nav-item-color-hover: color-mix(
+    in srgb,
+    var(--blue) var(--fg-contrast-amount),
+    var(--contrast-color)
+  );
+  --nav-item-background-hover: color-mix(
+    in srgb,
+    var(--blue) var(--bg-contrast-amount),
+    transparent
+  );
+  --background-modifier-border-focus: color-mix(
+    in srgb,
+    var(--blue) 40%,
+    transparent
+  );
+  --nav-collapse-icon-color: color-mix(in srgb, var(--blue) 60%, transparent);
+}
+.nav-folder-title[data-path^="03"]:hover {
+  --nav-collapse-icon-color: color-mix(
+    in srgb,
+    var(--blue) 60%,
+    var(--contrast-color)
+  );
+}
+.tree-item-children .nav-folder:has(.nav-folder-title[data-path^="03"]) {
+  --nav-indentation-guide-color: color-mix(
+    in srgb,
+    var(--blue) var(--medium-contrast-amount),
+    transparent
+  );
+}
+.tree-item-children
+  .nav-folder:has(.nav-folder-title[data-path^="03"])
+  .nav-file-title {
+  color: color-mix(
+    in srgb,
+    var(--blue) var(--medium-contrast-amount),
+    var(--default-text-color)
+  );
+  --nav-item-background-hover: color-mix(
+    in srgb,
+    color-mix(in srgb, var(--blue) 50%, var(--highlight))
+      var(--bg-contrast-amount),
+    transparent
+  );
+  --background-modifier-border-focus: color-mix(
+    in srgb,
+    var(--blue) 40%,
+    transparent
+  );
+  --nav-item-background-active: color-mix(
+    in srgb,
+    var(--blue) var(--active-contrast-amount),
+    transparent
+  );
+}
+
+/* ------------------------------- 04 Prefix -------------------------------- */
+.nav-folder-title[data-path^="04"] {
+  color: var(--violet);
+  --nav-item-color-hover: color-mix(
+    in srgb,
+    var(--violet) var(--fg-contrast-amount),
+    var(--contrast-color)
+  );
+  --nav-item-background-hover: color-mix(
+    in srgb,
+    var(--violet) var(--bg-contrast-amount),
+    transparent
+  );
+  --background-modifier-border-focus: color-mix(
+    in srgb,
+    var(--violet) 40%,
+    transparent
+  );
+  --nav-collapse-icon-color: color-mix(in srgb, var(--violet) 60%, transparent);
+}
+.nav-folder-title[data-path^="04"]:hover {
+  --nav-collapse-icon-color: color-mix(
+    in srgb,
+    var(--violet) 60%,
+    var(--contrast-color)
+  );
+}
+.tree-item-children .nav-folder:has(.nav-folder-title[data-path^="04"]) {
+  --nav-indentation-guide-color: color-mix(
+    in srgb,
+    var(--violet) var(--medium-contrast-amount),
+    transparent
+  );
+}
+.tree-item-children
+  .nav-folder:has(.nav-folder-title[data-path^="04"])
+  .nav-file-title {
+  color: color-mix(
+    in srgb,
+    var(--violet) var(--medium-contrast-amount),
+    var(--default-text-color)
+  );
+  --nav-item-background-hover: color-mix(
+    in srgb,
+    color-mix(in srgb, var(--violet) 50%, var(--highlight))
+      var(--bg-contrast-amount),
+    transparent
+  );
+  --background-modifier-border-focus: color-mix(
+    in srgb,
+    var(--violet) 40%,
+    transparent
+  );
+  --nav-item-background-active: color-mix(
+    in srgb,
+    var(--violet) var(--active-contrast-amount),
+    transparent
+  );
+}
+
+/* ------------------------------- 05 Prefix -------------------------------- */
+.nav-folder-title[data-path^="05"] {
+  color: var(--purple);
+  --nav-item-color-hover: color-mix(
+    in srgb,
+    var(--purple) var(--fg-contrast-amount),
+    var(--contrast-color)
+  );
+  --nav-item-background-hover: color-mix(
+    in srgb,
+    var(--purple) var(--bg-contrast-amount),
+    transparent
+  );
+  --background-modifier-border-focus: color-mix(
+    in srgb,
+    var(--purple) 40%,
+    transparent
+  );
+  --nav-collapse-icon-color: color-mix(in srgb, var(--purple) 60%, transparent);
+}
+.nav-folder-title[data-path^="05"]:hover {
+  --nav-collapse-icon-color: color-mix(
+    in srgb,
+    var(--purple) 60%,
+    var(--contrast-color)
+  );
+}
+.tree-item-children .nav-folder:has(.nav-folder-title[data-path^="05"]) {
+  --nav-indentation-guide-color: color-mix(
+    in srgb,
+    var(--purple) var(--medium-contrast-amount),
+    transparent
+  );
+}
+.tree-item-children
+  .nav-folder:has(.nav-folder-title[data-path^="05"])
+  .nav-file-title {
+  color: color-mix(
+    in srgb,
+    var(--purple) var(--medium-contrast-amount),
+    var(--default-text-color)
+  );
+  --nav-item-background-hover: color-mix(
+    in srgb,
+    color-mix(in srgb, var(--purple) 50%, var(--highlight))
+      var(--bg-contrast-amount),
+    transparent
+  );
+  --background-modifier-border-focus: color-mix(
+    in srgb,
+    var(--purple) 40%,
+    transparent
+  );
+  --nav-item-background-active: color-mix(
+    in srgb,
+    var(--purple) var(--active-contrast-amount),
+    transparent
+  );
+}
+
+/* ------------------------------- 06 Prefix -------------------------------- */
+.nav-folder-title[data-path^="06"] {
+  color: var(--magenta);
+  --nav-item-color-hover: color-mix(
+    in srgb,
+    var(--magenta) var(--fg-contrast-amount),
+    var(--contrast-color)
+  );
+  --nav-item-background-hover: color-mix(
+    in srgb,
+    var(--magenta) var(--bg-contrast-amount),
+    transparent
+  );
+  --background-modifier-border-focus: color-mix(
+    in srgb,
+    var(--magenta) 40%,
+    transparent
+  );
+  --nav-collapse-icon-color: color-mix(
+    in srgb,
+    var(--magenta) 60%,
+    transparent
+  );
+}
+.nav-folder-title[data-path^="06"]:hover {
+  --nav-collapse-icon-color: color-mix(
+    in srgb,
+    var(--magenta) 60%,
+    var(--contrast-color)
+  );
+}
+.tree-item-children .nav-folder:has(.nav-folder-title[data-path^="06"]) {
+  --nav-indentation-guide-color: color-mix(
+    in srgb,
+    var(--magenta) var(--medium-contrast-amount),
+    transparent
+  );
+}
+.tree-item-children
+  .nav-folder:has(.nav-folder-title[data-path^="06"])
+  .nav-file-title {
+  color: color-mix(
+    in srgb,
+    var(--magenta) var(--medium-contrast-amount),
+    var(--default-text-color)
+  );
+  --nav-item-background-hover: color-mix(
+    in srgb,
+    color-mix(in srgb, var(--magenta) 50%, var(--highlight))
+      var(--bg-contrast-amount),
+    transparent
+  );
+  --background-modifier-border-focus: color-mix(
+    in srgb,
+    var(--magenta) 40%,
+    transparent
+  );
+  --nav-item-background-active: color-mix(
+    in srgb,
+    var(--magenta) var(--active-contrast-amount),
+    transparent
+  );
+}
+
+/* ------------------------------- 07 Prefix -------------------------------- */
+.nav-folder-title[data-path^="07"] {
+  color: var(--hot-red);
+  --nav-item-color-hover: color-mix(
+    in srgb,
+    var(--hot-red) var(--fg-contrast-amount),
+    var(--contrast-color)
+  );
+  --nav-item-background-hover: color-mix(
+    in srgb,
+    var(--hot-red) var(--bg-contrast-amount),
+    transparent
+  );
+  --background-modifier-border-focus: color-mix(
+    in srgb,
+    var(--hot-red) 40%,
+    transparent
+  );
+  --nav-collapse-icon-color: color-mix(
+    in srgb,
+    var(--hot-red) 60%,
+    transparent
+  );
+}
+.nav-folder-title[data-path^="07"]:hover {
+  --nav-collapse-icon-color: color-mix(
+    in srgb,
+    var(--hot-red) 60%,
+    var(--contrast-color)
+  );
+}
+.tree-item-children .nav-folder:has(.nav-folder-title[data-path^="07"]) {
+  --nav-indentation-guide-color: color-mix(
+    in srgb,
+    var(--hot-red) var(--medium-contrast-amount),
+    transparent
+  );
+}
+.tree-item-children
+  .nav-folder:has(.nav-folder-title[data-path^="07"])
+  .nav-file-title {
+  color: color-mix(
+    in srgb,
+    var(--hot-red) var(--medium-contrast-amount),
+    var(--default-text-color)
+  );
+  --nav-item-background-hover: color-mix(
+    in srgb,
+    color-mix(in srgb, var(--hot-red) 50%, var(--highlight))
+      var(--bg-contrast-amount),
+    transparent
+  );
+  --background-modifier-border-focus: color-mix(
+    in srgb,
+    var(--hot-red) 40%,
+    transparent
+  );
+  --nav-item-background-active: color-mix(
+    in srgb,
+    var(--hot-red) var(--active-contrast-amount),
+    transparent
+  );
+}
+
+/* ------------------------------- 99 Prefix -------------------------------- */
+.nav-folder-title[data-path^="99"] {
+  color: var(--cool-gray);
+  --nav-item-color-hover: color-mix(
+    in srgb,
+    var(--cool-gray) var(--fg-contrast-amount),
+    var(--contrast-color)
+  );
+  --nav-item-background-hover: color-mix(
+    in srgb,
+    var(--cool-gray) var(--bg-contrast-amount),
+    transparent
+  );
+  --background-modifier-border-focus: color-mix(
+    in srgb,
+    var(--cool-gray) 40%,
+    transparent
+  );
+  --nav-collapse-icon-color: color-mix(
+    in srgb,
+    var(--cool-gray) 60%,
+    transparent
+  );
+}
+.nav-folder-title[data-path^="99"]:hover {
+  --nav-collapse-icon-color: color-mix(
+    in srgb,
+    var(--cool-gray) 60%,
+    var(--contrast-color)
+  );
+}
+.tree-item-children .nav-folder:has(.nav-folder-title[data-path^="99"]) {
+  --nav-indentation-guide-color: color-mix(
+    in srgb,
+    var(--cool-gray) var(--medium-contrast-amount),
+    transparent
+  );
+}
+.tree-item-children
+  .nav-folder:has(.nav-folder-title[data-path^="99"])
+  .nav-file-title {
+  color: color-mix(
+    in srgb,
+    var(--cool-gray) var(--medium-contrast-amount),
+    var(--default-text-color)
+  );
+  --nav-item-background-hover: color-mix(
+    in srgb,
+    color-mix(in srgb, var(--cool-gray) 50%, var(--highlight))
+      var(--bg-contrast-amount),
+    transparent
+  );
+  --background-modifier-border-focus: color-mix(
+    in srgb,
+    var(--cool-gray) 40%,
+    transparent
+  );
+  --nav-item-background-active: color-mix(
+    in srgb,
+    var(--cool-gray) var(--active-contrast-amount),
+    transparent
+  );
+} .CtxtMenu_InfoClose {  top:.2em; right:.2em;}
+.CtxtMenu_InfoContent {  overflow:auto; text-align:left; font-size:80%;  padding:.4em .6em; border:1px inset; margin:1em 0px;  max-height:20em; max-width:30em; background-color:#EEEEEE;  white-space:normal;}
+.CtxtMenu_Info.CtxtMenu_MousePost {outline:none;}
+.CtxtMenu_Info {  position:fixed; left:50%; width:auto; text-align:center;  border:3px outset; padding:1em 2em; background-color:#DDDDDD;  color:black;  cursor:default; font-family:message-box; font-size:120%;  font-style:normal; text-indent:0; text-transform:none;  line-height:normal; letter-spacing:normal; word-spacing:normal;  word-wrap:normal; white-space:nowrap; float:none; z-index:201;  border-radius: 15px;                     /* Opera 10.5 and IE9 */  -webkit-border-radius:15px;               /* Safari and Chrome */  -moz-border-radius:15px;                  /* Firefox */  -khtml-border-radius:15px;                /* Konqueror */  box-shadow:0px 10px 20px #808080;         /* Opera 10.5 and IE9 */  -webkit-box-shadow:0px 10px 20px #808080; /* Safari 3 & Chrome */  -moz-box-shadow:0px 10px 20px #808080;    /* Forefox 3.5 */  -khtml-box-shadow:0px 10px 20px #808080;  /* Konqueror */  filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color="gray", Positive="true"); /* IE */}
+ .CtxtMenu_MenuClose {  position:absolute;  cursor:pointer;  display:inline-block;  border:2px solid #AAA;  border-radius:18px;  -webkit-border-radius: 18px;             /* Safari and Chrome */  -moz-border-radius: 18px;                /* Firefox */  -khtml-border-radius: 18px;              /* Konqueror */  font-family: "Courier New", Courier;  font-size:24px;  color:#F0F0F0}
+.CtxtMenu_MenuClose span {  display:block; background-color:#AAA; border:1.5px solid;  border-radius:18px;  -webkit-border-radius: 18px;             /* Safari and Chrome */  -moz-border-radius: 18px;                /* Firefox */  -khtml-border-radius: 18px;              /* Konqueror */  line-height:0;  padding:8px 0 6px     /* may need to be browser-specific */}
+.CtxtMenu_MenuClose:hover {  color:white!important;  border:2px solid #CCC!important}
+.CtxtMenu_MenuClose:hover span {  background-color:#CCC!important}
+.CtxtMenu_MenuClose:hover:focus {  outline:none}
+ .CtxtMenu_Menu {  position:absolute;  background-color:white;  color:black;  width:auto; padding:5px 0px;  border:1px solid #CCCCCC; margin:0; cursor:default;  font: menu; text-align:left; text-indent:0; text-transform:none;  line-height:normal; letter-spacing:normal; word-spacing:normal;  word-wrap:normal; white-space:nowrap; float:none; z-index:201;  border-radius: 5px;                     /* Opera 10.5 and IE9 */  -webkit-border-radius: 5px;             /* Safari and Chrome */  -moz-border-radius: 5px;                /* Firefox */  -khtml-border-radius: 5px;              /* Konqueror */  box-shadow:0px 10px 20px #808080;         /* Opera 10.5 and IE9 */  -webkit-box-shadow:0px 10px 20px #808080; /* Safari 3 & Chrome */  -moz-box-shadow:0px 10px 20px #808080;    /* Forefox 3.5 */  -khtml-box-shadow:0px 10px 20px #808080;  /* Konqueror */}
+.CtxtMenu_MenuItem {  padding: 1px 2em;  background:transparent;}
+.CtxtMenu_MenuArrow {  position:absolute; right:.5em; padding-top:.25em; color:#666666;  font-family: null; font-size: .75em}
+.CtxtMenu_MenuActive .CtxtMenu_MenuArrow {color:white}
+.CtxtMenu_MenuArrow.CtxtMenu_RTL {left:.5em; right:auto}
+.CtxtMenu_MenuCheck {  position:absolute; left:.7em;  font-family: null}
+.CtxtMenu_MenuCheck.CtxtMenu_RTL { right:.7em; left:auto }
+.CtxtMenu_MenuRadioCheck {  position:absolute; left: .7em;}
+.CtxtMenu_MenuRadioCheck.CtxtMenu_RTL {  right: .7em; left:auto}
+.CtxtMenu_MenuInputBox {  padding-left: 1em; right:.5em; color:#666666;  font-family: null;}
+.CtxtMenu_MenuInputBox.CtxtMenu_RTL {  left: .1em;}
+.CtxtMenu_MenuComboBox {  left:.1em; padding-bottom:.5em;}
+.CtxtMenu_MenuSlider {  left: .1em;}
+.CtxtMenu_SliderValue {  position:absolute; right:.1em; padding-top:.25em; color:#333333;  font-size: .75em}
+.CtxtMenu_SliderBar {  outline: none; background: #d3d3d3}
+.CtxtMenu_MenuLabel {  padding: 1px 2em 3px 1.33em;  font-style:italic}
+.CtxtMenu_MenuRule {  border-top: 1px solid #DDDDDD;  margin: 4px 3px;}
+.CtxtMenu_MenuDisabled {  color:GrayText}
+.CtxtMenu_MenuActive {  background-color: #606872;  color: white;}
+.CtxtMenu_MenuDisabled:focus {  background-color: #E8E8E8}
+.CtxtMenu_MenuLabel:focus {  background-color: #E8E8E8}
+.CtxtMenu_ContextMenu:focus {  outline:none}
+.CtxtMenu_ContextMenu .CtxtMenu_MenuItem:focus {  outline:none}
+.CtxtMenu_SelectionMenu {  position:relative; float:left;  border-bottom: none; -webkit-box-shadow:none; -webkit-border-radius:0px; }
+.CtxtMenu_SelectionItem {  padding-right: 1em;}
+.CtxtMenu_Selection {  right: 40%; width:50%; }
+.CtxtMenu_SelectionBox {  padding: 0em; max-height:20em; max-width: none;  background-color:#FFFFFF;}
+.CtxtMenu_SelectionDivider {  clear: both; border-top: 2px solid #000000;}
+.CtxtMenu_Menu .CtxtMenu_MenuClose {  top:-10px; left:-10px}
+ 
+mjx-container[jax="CHTML"] {
+  line-height: 0;
+}
+
+mjx-container [space="1"] {
+  margin-left: .111em;
+}
+
+mjx-container [space="2"] {
+  margin-left: .167em;
+}
+
+mjx-container [space="3"] {
+  margin-left: .222em;
+}
+
+mjx-container [space="4"] {
+  margin-left: .278em;
+}
+
+mjx-container [space="5"] {
+  margin-left: .333em;
+}
+
+mjx-container [rspace="1"] {
+  margin-right: .111em;
+}
+
+mjx-container [rspace="2"] {
+  margin-right: .167em;
+}
+
+mjx-container [rspace="3"] {
+  margin-right: .222em;
+}
+
+mjx-container [rspace="4"] {
+  margin-right: .278em;
+}
+
+mjx-container [rspace="5"] {
+  margin-right: .333em;
+}
+
+mjx-container [size="s"] {
+  font-size: 70.7%;
+}
+
+mjx-container [size="ss"] {
+  font-size: 50%;
+}
+
+mjx-container [size="Tn"] {
+  font-size: 60%;
+}
+
+mjx-container [size="sm"] {
+  font-size: 85%;
+}
+
+mjx-container [size="lg"] {
+  font-size: 120%;
+}
+
+mjx-container [size="Lg"] {
+  font-size: 144%;
+}
+
+mjx-container [size="LG"] {
+  font-size: 173%;
+}
+
+mjx-container [size="hg"] {
+  font-size: 207%;
+}
+
+mjx-container [size="HG"] {
+  font-size: 249%;
+}
+
+mjx-container [width="full"] {
+  width: 100%;
+}
+
+mjx-box {
+  display: inline-block;
+}
+
+mjx-block {
+  display: block;
+}
+
+mjx-itable {
+  display: inline-table;
+}
+
+mjx-row {
+  display: table-row;
+}
+
+mjx-row > * {
+  display: table-cell;
+}
+
+mjx-mtext {
+  display: inline-block;
+}
+
+mjx-mstyle {
+  display: inline-block;
+}
+
+mjx-merror {
+  display: inline-block;
+  color: red;
+  background-color: yellow;
+}
+
+mjx-mphantom {
+  visibility: hidden;
+}
+
+_::-webkit-full-page-media, _:future, :root mjx-container {
+  will-change: opacity;
+}
+
+mjx-assistive-mml {
+  position: absolute !important;
+  top: 0px;
+  left: 0px;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 1px 0px 0px 0px !important;
+  border: 0px !important;
+  display: block !important;
+  width: auto !important;
+  overflow: hidden !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+mjx-assistive-mml[display="block"] {
+  width: 100% !important;
+}
+
+mjx-math {
+  display: inline-block;
+  text-align: left;
+  line-height: 0;
+  text-indent: 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 100%;
+  font-size-adjust: none;
+  letter-spacing: normal;
+  border-collapse: collapse;
+  word-wrap: normal;
+  word-spacing: normal;
+  white-space: nowrap;
+  direction: ltr;
+  padding: 1px 0;
+}
+
+mjx-container[jax="CHTML"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="CHTML"][display="true"][width="full"] {
+  display: flex;
+}
+
+mjx-container[jax="CHTML"][display="true"] mjx-math {
+  padding: 0;
+}
+
+mjx-container[jax="CHTML"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="CHTML"][justify="right"] {
+  text-align: right;
+}
+
+mjx-mi {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-c {
+  display: inline-block;
+}
+
+mjx-utext {
+  display: inline-block;
+  padding: .75em 0 .2em 0;
+}
+
+mjx-mo {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-stretchy-h {
+  display: inline-table;
+  width: 100%;
+}
+
+mjx-stretchy-h > * {
+  display: table-cell;
+  width: 0;
+}
+
+mjx-stretchy-h > * > mjx-c {
+  display: inline-block;
+  transform: scalex(1.0000001);
+}
+
+mjx-stretchy-h > * > mjx-c::before {
+  display: inline-block;
+  width: initial;
+}
+
+mjx-stretchy-h > mjx-ext {
+  /* IE */ overflow: hidden;
+  /* others */ overflow: clip visible;
+  width: 100%;
+}
+
+mjx-stretchy-h > mjx-ext > mjx-c::before {
+  transform: scalex(500);
+}
+
+mjx-stretchy-h > mjx-ext > mjx-c {
+  width: 0;
+}
+
+mjx-stretchy-h > mjx-beg > mjx-c {
+  margin-right: -.1em;
+}
+
+mjx-stretchy-h > mjx-end > mjx-c {
+  margin-left: -.1em;
+}
+
+mjx-stretchy-v {
+  display: inline-block;
+}
+
+mjx-stretchy-v > * {
+  display: block;
+}
+
+mjx-stretchy-v > mjx-beg {
+  height: 0;
+}
+
+mjx-stretchy-v > mjx-end > mjx-c {
+  display: block;
+}
+
+mjx-stretchy-v > * > mjx-c {
+  transform: scaley(1.0000001);
+  transform-origin: left center;
+  overflow: hidden;
+}
+
+mjx-stretchy-v > mjx-ext {
+  display: block;
+  height: 100%;
+  box-sizing: border-box;
+  border: 0px solid transparent;
+  /* IE */ overflow: hidden;
+  /* others */ overflow: visible clip;
+}
+
+mjx-stretchy-v > mjx-ext > mjx-c::before {
+  width: initial;
+  box-sizing: border-box;
+}
+
+mjx-stretchy-v > mjx-ext > mjx-c {
+  transform: scaleY(500) translateY(.075em);
+  overflow: visible;
+}
+
+mjx-mark {
+  display: inline-block;
+  height: 0px;
+}
+
+mjx-TeXAtom {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-mn {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-c::before {
+  display: block;
+  width: 0;
+}
+
+.MJX-TEX {
+  font-family: MJXZERO, MJXTEX;
+}
+
+.TEX-B {
+  font-family: MJXZERO, MJXTEX-B;
+}
+
+.TEX-I {
+  font-family: MJXZERO, MJXTEX-I;
+}
+
+.TEX-MI {
+  font-family: MJXZERO, MJXTEX-MI;
+}
+
+.TEX-BI {
+  font-family: MJXZERO, MJXTEX-BI;
+}
+
+.TEX-S1 {
+  font-family: MJXZERO, MJXTEX-S1;
+}
+
+.TEX-S2 {
+  font-family: MJXZERO, MJXTEX-S2;
+}
+
+.TEX-S3 {
+  font-family: MJXZERO, MJXTEX-S3;
+}
+
+.TEX-S4 {
+  font-family: MJXZERO, MJXTEX-S4;
+}
+
+.TEX-A {
+  font-family: MJXZERO, MJXTEX-A;
+}
+
+.TEX-C {
+  font-family: MJXZERO, MJXTEX-C;
+}
+
+.TEX-CB {
+  font-family: MJXZERO, MJXTEX-CB;
+}
+
+.TEX-FR {
+  font-family: MJXZERO, MJXTEX-FR;
+}
+
+.TEX-FRB {
+  font-family: MJXZERO, MJXTEX-FRB;
+}
+
+.TEX-SS {
+  font-family: MJXZERO, MJXTEX-SS;
+}
+
+.TEX-SSB {
+  font-family: MJXZERO, MJXTEX-SSB;
+}
+
+.TEX-SSI {
+  font-family: MJXZERO, MJXTEX-SSI;
+}
+
+.TEX-SC {
+  font-family: MJXZERO, MJXTEX-SC;
+}
+
+.TEX-T {
+  font-family: MJXZERO, MJXTEX-T;
+}
+
+.TEX-V {
+  font-family: MJXZERO, MJXTEX-V;
+}
+
+.TEX-VB {
+  font-family: MJXZERO, MJXTEX-VB;
+}
+
+mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
+  font-family: MJXZERO, MJXTEX-S1, MJXTEX-S4, MJXTEX, MJXTEX-A ! important;
+}
+
+@font-face /* 0 */ {
+  font-family: MJXZERO;
+  src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_Zero.woff") format("woff");
+}
+
+@font-face /* 1 */ {
+  font-family: MJXTEX;
+  src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_Main-Regular.woff") format("woff");
+}
+
+@font-face /* 2 */ {
+  font-family: MJXTEX-B;
+  src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_Main-Bold.woff") format("woff");
+}
+
+@font-face /* 3 */ {
+  font-family: MJXTEX-I;
+  src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_Math-Italic.woff") format("woff");
+}
+
+@font-face /* 4 */ {
+  font-family: MJXTEX-MI;
+  src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_Main-Italic.woff") format("woff");
+}
+
+@font-face /* 5 */ {
+  font-family: MJXTEX-BI;
+  src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_Math-BoldItalic.woff") format("woff");
+}
+
+@font-face /* 6 */ {
+  font-family: MJXTEX-S1;
+  src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_Size1-Regular.woff") format("woff");
+}
+
+@font-face /* 7 */ {
+  font-family: MJXTEX-S2;
+  src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_Size2-Regular.woff") format("woff");
+}
+
+@font-face /* 8 */ {
+  font-family: MJXTEX-S3;
+  src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_Size3-Regular.woff") format("woff");
+}
+
+@font-face /* 9 */ {
+  font-family: MJXTEX-S4;
+  src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_Size4-Regular.woff") format("woff");
+}
+
+@font-face /* 10 */ {
+  font-family: MJXTEX-A;
+  src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_AMS-Regular.woff") format("woff");
+}
+
+@font-face /* 11 */ {
+  font-family: MJXTEX-C;
+  src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_Calligraphic-Regular.woff") format("woff");
+}
+
+@font-face /* 12 */ {
+  font-family: MJXTEX-CB;
+  src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_Calligraphic-Bold.woff") format("woff");
+}
+
+@font-face /* 13 */ {
+  font-family: MJXTEX-FR;
+  src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_Fraktur-Regular.woff") format("woff");
+}
+
+@font-face /* 14 */ {
+  font-family: MJXTEX-FRB;
+  src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_Fraktur-Bold.woff") format("woff");
+}
+
+@font-face /* 15 */ {
+  font-family: MJXTEX-SS;
+  src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_SansSerif-Regular.woff") format("woff");
+}
+
+@font-face /* 16 */ {
+  font-family: MJXTEX-SSB;
+  src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_SansSerif-Bold.woff") format("woff");
+}
+
+@font-face /* 17 */ {
+  font-family: MJXTEX-SSI;
+  src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_SansSerif-Italic.woff") format("woff");
+}
+
+@font-face /* 18 */ {
+  font-family: MJXTEX-SC;
+  src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_Script-Regular.woff") format("woff");
+}
+
+@font-face /* 19 */ {
+  font-family: MJXTEX-T;
+  src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_Typewriter-Regular.woff") format("woff");
+}
+
+@font-face /* 20 */ {
+  font-family: MJXTEX-V;
+  src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_Vector-Regular.woff") format("woff");
+}
+
+@font-face /* 21 */ {
+  font-family: MJXTEX-VB;
+  src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_Vector-Bold.woff") format("woff");
+}
+
+mjx-c.mjx-c1D453.TEX-I::before {
+  padding: 0.705em 0.55em 0.205em 0;
+  content: "f";
+}
+
+mjx-c.mjx-c28::before {
+  padding: 0.75em 0.389em 0.25em 0;
+  content: "(";
+}
+
+mjx-c.mjx-c29::before {
+  padding: 0.75em 0.389em 0.25em 0;
+  content: ")";
+}
+
+mjx-c.mjx-c3D::before {
+  padding: 0.583em 0.778em 0.082em 0;
+  content: "=";
+}
+
+mjx-c.mjx-c2033::before {
+  padding: 0.56em 0.55em 0 0;
+  content: "\2032\2032";
+}
+
+mjx-c.mjx-c1D43B.TEX-I::before {
+  padding: 0.683em 0.888em 0 0;
+  content: "H";
+}
+
+mjx-c.mjx-c1D45C.TEX-I::before {
+  padding: 0.441em 0.485em 0.011em 0;
+  content: "o";
+}
+
+mjx-c.mjx-c1D464.TEX-I::before {
+  padding: 0.443em 0.716em 0.011em 0;
+  content: "w";
+}
+
+mjx-c.mjx-c1D44E.TEX-I::before {
+  padding: 0.441em 0.529em 0.01em 0;
+  content: "a";
+}
+
+mjx-c.mjx-c1D45F.TEX-I::before {
+  padding: 0.442em 0.451em 0.011em 0;
+  content: "r";
+}
+
+mjx-c.mjx-c1D452.TEX-I::before {
+  padding: 0.442em 0.466em 0.011em 0;
+  content: "e";
+}
+
+mjx-c.mjx-c1D466.TEX-I::before {
+  padding: 0.442em 0.49em 0.205em 0;
+  content: "y";
+}
+
+mjx-c.mjx-c1D462.TEX-I::before {
+  padding: 0.442em 0.572em 0.011em 0;
+  content: "u";
+}
+
+mjx-c.mjx-c1D436.TEX-I::before {
+  padding: 0.705em 0.76em 0.022em 0;
+  content: "C";
+}
+
+mjx-c.mjx-c1D461.TEX-I::before {
+  padding: 0.626em 0.361em 0.011em 0;
+  content: "t";
+}
+
+mjx-c.mjx-c35::before {
+  padding: 0.666em 0.5em 0.022em 0;
+  content: "5";
+}
+
+mjx-c.mjx-c2212::before {
+  padding: 0.583em 0.778em 0.082em 0;
+  content: "\2212";
+}
+
+mjx-c.mjx-c1D438.TEX-I::before {
+  padding: 0.68em 0.764em 0 0;
+  content: "E";
+}
+
+mjx-c.mjx-c1D440.TEX-I::before {
+  padding: 0.683em 1.051em 0 0;
+  content: "M";
+}
+
+mjx-c.mjx-c1D434.TEX-I::before {
+  padding: 0.716em 0.75em 0 0;
+  content: "A";
+}
+
+mjx-c.mjx-c1D43C.TEX-I::before {
+  padding: 0.683em 0.504em 0 0;
+  content: "I";
+}
+
+mjx-c.mjx-c1D43F.TEX-I::before {
+  padding: 0.683em 0.681em 0 0;
+  content: "L";
+}
+
+mjx-c.mjx-c1D44C.TEX-I::before {
+  padding: 0.683em 0.763em 0 0;
+  content: "Y";
+}
+
+mjx-c.mjx-c1D460.TEX-I::before {
+  padding: 0.442em 0.469em 0.01em 0;
+  content: "s";
+}
+
+mjx-c.mjx-c2F::before {
+  padding: 0.75em 0.5em 0.25em 0;
+  content: "/";
+}
+
+mjx-c.mjx-c1D441.TEX-I::before {
+  padding: 0.683em 0.888em 0 0;
+  content: "N";
+}
+ 
+@font-face /* 0 */ {
+  font-family: MJXZERO;
+  src: url("http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Zero.woff") format("woff");
+}
+
+@font-face /* 1 */ {
+  font-family: MJXTEX;
+  src: url("http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Main-Regular.woff") format("woff");
+}
+
+@font-face /* 2 */ {
+  font-family: MJXTEX-B;
+  src: url("http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Main-Bold.woff") format("woff");
+}
+
+@font-face /* 3 */ {
+  font-family: MJXTEX-I;
+  src: url("http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Math-Italic.woff") format("woff");
+}
+
+@font-face /* 4 */ {
+  font-family: MJXTEX-MI;
+  src: url("http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Main-Italic.woff") format("woff");
+}
+
+@font-face /* 5 */ {
+  font-family: MJXTEX-BI;
+  src: url("http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Math-BoldItalic.woff") format("woff");
+}
+
+@font-face /* 6 */ {
+  font-family: MJXTEX-S1;
+  src: url("http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Size1-Regular.woff") format("woff");
+}
+
+@font-face /* 7 */ {
+  font-family: MJXTEX-S2;
+  src: url("http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Size2-Regular.woff") format("woff");
+}
+
+@font-face /* 8 */ {
+  font-family: MJXTEX-S3;
+  src: url("http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Size3-Regular.woff") format("woff");
+}
+
+@font-face /* 9 */ {
+  font-family: MJXTEX-S4;
+  src: url("http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Size4-Regular.woff") format("woff");
+}
+
+@font-face /* 10 */ {
+  font-family: MJXTEX-A;
+  src: url("http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_AMS-Regular.woff") format("woff");
+}
+
+@font-face /* 11 */ {
+  font-family: MJXTEX-C;
+  src: url("http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Calligraphic-Regular.woff") format("woff");
+}
+
+@font-face /* 12 */ {
+  font-family: MJXTEX-CB;
+  src: url("http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Calligraphic-Bold.woff") format("woff");
+}
+
+@font-face /* 13 */ {
+  font-family: MJXTEX-FR;
+  src: url("http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Fraktur-Regular.woff") format("woff");
+}
+
+@font-face /* 14 */ {
+  font-family: MJXTEX-FRB;
+  src: url("http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Fraktur-Bold.woff") format("woff");
+}
+
+@font-face /* 15 */ {
+  font-family: MJXTEX-SS;
+  src: url("http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_SansSerif-Regular.woff") format("woff");
+}
+
+@font-face /* 16 */ {
+  font-family: MJXTEX-SSB;
+  src: url("http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_SansSerif-Bold.woff") format("woff");
+}
+
+@font-face /* 17 */ {
+  font-family: MJXTEX-SSI;
+  src: url("http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_SansSerif-Italic.woff") format("woff");
+}
+
+@font-face /* 18 */ {
+  font-family: MJXTEX-SC;
+  src: url("http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Script-Regular.woff") format("woff");
+}
+
+@font-face /* 19 */ {
+  font-family: MJXTEX-T;
+  src: url("http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Typewriter-Regular.woff") format("woff");
+}
+
+@font-face /* 20 */ {
+  font-family: MJXTEX-V;
+  src: url("http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Vector-Regular.woff") format("woff");
+}
+
+@font-face /* 21 */ {
+  font-family: MJXTEX-VB;
+  src: url("http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Vector-Bold.woff") format("woff");
+}undefined
+</style>
+    </head>
+    <body>
+
+<h1 data-heading="機器學習與深度學習簡介" dir="auto">機器學習與深度學習簡介</h1>
+<h2 data-heading="什麼是機器學習？" dir="auto">什麼是機器學習？</h2>
+<ul>
+<li dir="auto">機器學習本質上是在「尋找一個函數」(Looking for a Function)。<br>
+</li>
+<li dir="auto">這個函數可以根據輸入（input）產生特定的輸出（output）。<br>
+</li>
+</ul>
+<h3 data-heading="範例：" dir="auto">範例：</h3>
+<ul>
+<li dir="auto"><strong>語音辨識 (Speech Recognition)</strong>： <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-merror data-mjx-error="Misplaced &amp;" title="Misplaced &amp;"><mjx-mtext style="font-family: MJXZERO, serif;"><mjx-utext variant="-explicitFont" style="width: 349px;">f(聲音)="How&amp;nbsp;are&amp;nbsp;you"</mjx-utext></mjx-mtext></mjx-merror></mjx-math></mjx-container></span><br>
+</li>
+<li dir="auto"><strong>圖像辨識 (Image Recognition)</strong>：<span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D453 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-n"><mjx-utext variant="normal" style="font-family: MJXZERO, serif;">圖</mjx-utext></mjx-mi><mjx-mi class="mjx-n"><mjx-utext variant="normal" style="font-family: MJXZERO, serif;">片</mjx-utext></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2033"></mjx-c></mjx-mo></mjx-texatom><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D436 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D461 TEX-I"></mjx-c></mjx-mi><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2033"></mjx-c></mjx-mo></mjx-texatom></mjx-math></mjx-container></span><br>
+</li>
+<li dir="auto"><strong>圍棋 (Playing Go)</strong>：<span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D453 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-n"><mjx-utext variant="normal" style="font-family: MJXZERO, serif;">棋</mjx-utext></mjx-mi><mjx-mi class="mjx-n"><mjx-utext variant="normal" style="font-family: MJXZERO, serif;">盤</mjx-utext></mjx-mi><mjx-mi class="mjx-n"><mjx-utext variant="normal" style="font-family: MJXZERO, serif;">狀</mjx-utext></mjx-mi><mjx-mi class="mjx-n"><mjx-utext variant="normal" style="font-family: MJXZERO, serif;">態</mjx-utext></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2033"></mjx-c></mjx-mo></mjx-texatom><mjx-mn class="mjx-n"><mjx-c class="mjx-c35"></mjx-c></mjx-mn><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2212"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="3"><mjx-c class="mjx-c35"></mjx-c></mjx-mn><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2033"></mjx-c></mjx-mo></mjx-texatom></mjx-math></mjx-container></span>(下一步棋)<br>
+</li>
+</ul>
+<h2 data-heading="不同類型的函數" dir="auto">不同類型的函數</h2>
+<h3 data-heading="1. **迴歸 (Regression)**" dir="auto">1. <strong>迴歸 (Regression)</strong></h3>
+<ul>
+<li dir="auto">函數的輸出是一個<strong>純量 (scalar)</strong>。<br>
+</li>
+<li dir="auto"><strong>範例</strong>：根據今天的 PM2.5、氣溫等數據，預測明天的 PM2.5 值。<br>
+</li>
+</ul>
+<h3 data-heading="2. **分類 (Classification)**" dir="auto">2. <strong>分類 (Classification)</strong></h3>
+<ul>
+<li dir="auto">函數的輸出是從給定的選項 (classes) 中選擇一個正確的。<br>
+</li>
+<li dir="auto"><strong>範例</strong>：垃圾郵件過濾器 <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D453 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D438 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D440 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D434 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D43C TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D43F TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="4"><mjx-c class="mjx-c1D44C TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D452 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D460 TEX-I"></mjx-c></mjx-mi><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2F"></mjx-c></mjx-mo></mjx-texatom><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D441 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45C TEX-I"></mjx-c></mjx-mi></mjx-math></mjx-container></span>。<br>
+</li>
+<li dir="auto">在圍棋中，函數的輸出是 19x19 個格子中的一個，因此有 19×19 個 classes。<br>
+</li>
+</ul>
+<h3 data-heading="3. **結構化學習 (Structured Learning)**" dir="auto">3. <strong>結構化學習 (Structured Learning)</strong></h3>
+<ul>
+<li dir="auto">函數的輸出是具有特定結構的內容，例如圖像或文件。<br>
+</li>
+<li dir="auto">結構化學習可以看作是迴歸和分類的綜合應用。<br>
+</li>
+</ul>
+<h2 data-heading="如何尋找一個函數？" dir="auto">如何尋找一個函數？</h2>
+<p dir="auto">尋找函數的過程可以分為三個主要步驟：</p>
+<h3 data-heading="**Step 1: 定義一個帶有未知參數的函數 (Model)**" dir="auto"><strong>Step 1: 定義一個帶有未知參數的函數 (Model)</strong></h3>
+<ul>
+<li dir="auto">我們需要根據領域知識 (domain knowledge) 來定義一個函數模型。<br>
+</li>
+<li dir="auto"><strong>範例</strong>：預測 YouTube 觀看次數
+<ul>
+<li dir="auto">假設模型為線性函數：y=b+wx1​  
+<ul>
+<li dir="auto"><span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D466 TEX-I"></mjx-c></mjx-mi></mjx-math></mjx-container></span>: 2/26 的觀看次數 (number of views on 2/26)<br>
+</li>
+<li dir="auto"><span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-math></mjx-container></span>​: 2/25 的觀看次數 (number of views on 2/25)<br>
+</li>
+<li dir="auto">b 和 w 是從數據中學習的未知參數，其中 w 稱為 <strong>weight (權重)</strong>，b 稱為 <strong>bias (偏差)</strong>。<br>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 data-heading="**Step 2: 定義損失函數 (Loss Function)**" dir="auto"><strong>Step 2: 定義損失函數 (Loss Function)</strong></h3>
+<ul>
+<li dir="auto"><strong>損失 (Loss)</strong> 是用來評估一組參數的好壞。<br>
+</li>
+<li dir="auto"><strong>損失函數</strong> L(b,w) 是參數的函數，用來衡量模型預測值與真實值之間的差距。<br>
+</li>
+<li dir="auto"><strong>常見的損失函數</strong>：
+<ul>
+<li dir="auto"><strong>均方誤差 (Mean Square Error, MSE)</strong>： <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D43F TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mfrac space="4"><mjx-frac><mjx-num><mjx-nstrut></mjx-nstrut><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-num><mjx-dbox><mjx-dtable><mjx-line></mjx-line><mjx-row><mjx-den><mjx-dstrut></mjx-dstrut><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D441 TEX-I"></mjx-c></mjx-mi></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-munderover space="2"><mjx-over style="padding-bottom: 0.192em; padding-left: 0.362em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-over><mjx-box><mjx-munder><mjx-row><mjx-base style="padding-left: 0.046em;"><mjx-mo class="mjx-sop"><mjx-c class="mjx-c2211 TEX-S1"></mjx-c></mjx-mo></mjx-base></mjx-row><mjx-row><mjx-under style="padding-top: 0.167em;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-texatom></mjx-under></mjx-row></mjx-munder></mjx-box></mjx-munderover><mjx-texatom space="2" texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c200B"></mjx-c></mjx-mo></mjx-texatom><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D466 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c200B"></mjx-c></mjx-mo></mjx-texatom><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2212"></mjx-c></mjx-mo><mjx-texatom space="3" texclass="ORD"><mjx-mover><mjx-over style="padding-bottom: 0.105em; padding-left: 0.408em; margin-bottom: -0.531em;"><mjx-mo class="mjx-n" style="width: 0px; margin-left: -0.25em;"><mjx-c class="mjx-c5E"></mjx-c></mjx-mo></mjx-over><mjx-base><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D466 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub></mjx-base></mjx-mover></mjx-texatom><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c200B"></mjx-c></mjx-mo></mjx-texatom><mjx-msup><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-script style="vertical-align: 0.363em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-math></mjx-container></span><br>
+</li>
+<li dir="auto"><strong>平均絕對誤差 (Mean Absolute Error, MAE)</strong>： <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D43F TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mfrac space="4"><mjx-frac><mjx-num><mjx-nstrut></mjx-nstrut><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-num><mjx-dbox><mjx-dtable><mjx-line></mjx-line><mjx-row><mjx-den><mjx-dstrut></mjx-dstrut><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D441 TEX-I"></mjx-c></mjx-mi></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-munderover space="2"><mjx-over style="padding-bottom: 0.192em; padding-left: 0.362em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-over><mjx-box><mjx-munder><mjx-row><mjx-base style="padding-left: 0.046em;"><mjx-mo class="mjx-sop"><mjx-c class="mjx-c2211 TEX-S1"></mjx-c></mjx-mo></mjx-base></mjx-row><mjx-row><mjx-under style="padding-top: 0.167em;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-texatom></mjx-under></mjx-row></mjx-munder></mjx-box></mjx-munderover><mjx-texatom space="2" texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c200B"></mjx-c></mjx-mo></mjx-texatom><mjx-mo class="mjx-n"><mjx-c class="mjx-c7C"></mjx-c></mjx-mo><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D466 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c200B"></mjx-c></mjx-mo></mjx-texatom><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2212"></mjx-c></mjx-mo><mjx-texatom space="3" texclass="ORD"><mjx-mover><mjx-over style="padding-bottom: 0.105em; padding-left: 0.408em; margin-bottom: -0.531em;"><mjx-mo class="mjx-n" style="width: 0px; margin-left: -0.25em;"><mjx-c class="mjx-c5E"></mjx-c></mjx-mo></mjx-over><mjx-base><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D466 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub></mjx-base></mjx-mover></mjx-texatom><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c200B"></mjx-c></mjx-mo></mjx-texatom><mjx-mo class="mjx-n"><mjx-c class="mjx-c7C"></mjx-c></mjx-mo></mjx-math></mjx-container></span><br>
+</li>
+<li dir="auto"><strong>交叉熵 (Cross-entropy)</strong>：當 <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D466 TEX-I"></mjx-c></mjx-mi></mjx-math></mjx-container></span> 和 <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-texatom texclass="ORD"><mjx-mover><mjx-over style="padding-bottom: 0.105em; padding-left: 0.301em; margin-bottom: -0.531em;"><mjx-mo class="mjx-n" style="width: 0px; margin-left: -0.25em;"><mjx-c class="mjx-c5E"></mjx-c></mjx-mo></mjx-over><mjx-base><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D466 TEX-I"></mjx-c></mjx-mi></mjx-base></mjx-mover></mjx-texatom></mjx-math></mjx-container></span>​ 都是機率分布時使用。<br>
+</li>
+</ul>
+</li>
+<li dir="auto">我們的目標是找到一組參數，使得損失函數的值最小。<br>
+</li>
+</ul>
+<h3 data-heading="**Step 3: 最佳化 (Optimization)**" dir="auto"><strong>Step 3: 最佳化 (Optimization)</strong></h3>
+<ul>
+<li dir="auto">最佳化的目標是找到一組能使損失函數達到最小值的參數 <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D464 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-mo class="mjx-n" size="s"><mjx-c class="mjx-c2217"></mjx-c></mjx-mo></mjx-script></mjx-msup></mjx-math></mjx-container></span> 和 b∗。<br>
+</li>
+<li dir="auto"><span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D464 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-mo class="mjx-n" size="s"><mjx-c class="mjx-c2217"></mjx-c></mjx-mo></mjx-script></mjx-msup><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-msup space="2"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44F TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-mo class="mjx-n" size="s"><mjx-c class="mjx-c2217"></mjx-c></mjx-mo></mjx-script></mjx-msup><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="4"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45F TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D454 TEX-I"></mjx-c></mjx-mi><mjx-mtext class="mjx-n"><mjx-c class="mjx-cA0"></mjx-c></mjx-mtext><mjx-munder><mjx-row><mjx-base><mjx-mrow><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45A TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-mrow></mjx-base></mjx-row><mjx-row><mjx-under style="padding-top: 0.167em; padding-left: 0.408em;"><mjx-mrow size="s"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D464 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44F TEX-I"></mjx-c></mjx-mi></mjx-mrow></mjx-under></mjx-row></mjx-munder><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c200B"></mjx-c></mjx-mo></mjx-texatom><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D43F TEX-I"></mjx-c></mjx-mi><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c200B"></mjx-c></mjx-mo></mjx-texatom></mjx-math></mjx-container></span><br>
+</li>
+<li dir="auto"><strong>梯度下降 (Gradient Descent)</strong> 是一種常見的優化方法：
+<ol style="list-style-type: decimal;">
+<li dir="auto"><p><strong>隨機初始化</strong>：隨機選擇一組初始參數 <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D464 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c30"></mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-math></mjx-container></span> 和 <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44F TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c30"></mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-math></mjx-container></span>。</p>
+</li>
+<li dir="auto">
+<p><strong>計算梯度</strong>：計算損失函數對參數的偏微分 <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mfrac><mjx-frac><mjx-num><mjx-nstrut></mjx-nstrut><mjx-mrow size="s"><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2202"></mjx-c></mjx-mo></mjx-texatom><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D464 TEX-I"></mjx-c></mjx-mi></mjx-mrow></mjx-num><mjx-dbox><mjx-dtable><mjx-line></mjx-line><mjx-row><mjx-den><mjx-dstrut></mjx-dstrut><mjx-mrow size="s"><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2202"></mjx-c></mjx-mo></mjx-texatom><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D43F TEX-I"></mjx-c></mjx-mi></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c200B"></mjx-c></mjx-mo></mjx-texatom></mjx-math></mjx-container></span> 和 <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mfrac><mjx-frac><mjx-num><mjx-nstrut></mjx-nstrut><mjx-mrow size="s"><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2202"></mjx-c></mjx-mo></mjx-texatom><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44F TEX-I"></mjx-c></mjx-mi></mjx-mrow></mjx-num><mjx-dbox><mjx-dtable><mjx-line></mjx-line><mjx-row><mjx-den><mjx-dstrut></mjx-dstrut><mjx-mrow size="s"><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2202"></mjx-c></mjx-mo></mjx-texatom><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D43F TEX-I"></mjx-c></mjx-mi></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac></mjx-math></mjx-container></span>​，這代表了在參數空間中損失函數的「坡度」。</p>
+</li>
+<li dir="auto">
+<p><strong>更新參數</strong>：</p>
+<ul>
+<li dir="auto"><span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D464 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2190"></mjx-c></mjx-mo><mjx-msub space="4"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D464 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c30"></mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2212"></mjx-c></mjx-mo><mjx-mtext class="mjx-n" space="3"><mjx-c class="mjx-cA0"></mjx-c></mjx-mtext><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D702 TEX-I"></mjx-c></mjx-mi><mjx-mfrac><mjx-frac><mjx-num><mjx-nstrut></mjx-nstrut><mjx-mrow size="s"><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2202"></mjx-c></mjx-mo></mjx-texatom><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D464 TEX-I"></mjx-c></mjx-mi></mjx-mrow></mjx-num><mjx-dbox><mjx-dtable><mjx-line></mjx-line><mjx-row><mjx-den><mjx-dstrut></mjx-dstrut><mjx-mrow size="s"><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2202"></mjx-c></mjx-mo></mjx-texatom><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D43F TEX-I"></mjx-c></mjx-mi></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c200B"></mjx-c></mjx-mo></mjx-texatom><mjx-msub><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-stretchy-v class="mjx-c7C" style="height: 1.623em; vertical-align: -0.561em;"><mjx-ext><mjx-c></mjx-c></mjx-ext><mjx-mark></mjx-mark></mjx-stretchy-v></mjx-mo></mjx-texatom><mjx-script style="vertical-align: -0.597em;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D464 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D464 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.289em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c30"></mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-texatom></mjx-script></mjx-msub><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c200B"></mjx-c></mjx-mo></mjx-texatom></mjx-math></mjx-container></span><br>
+</li>
+<li dir="auto"><span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44F TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2190"></mjx-c></mjx-mo><mjx-msub space="4"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44F TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c30"></mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2212"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="3"><mjx-c class="mjx-c1D702 TEX-I"></mjx-c></mjx-mi><mjx-mfrac><mjx-frac><mjx-num><mjx-nstrut></mjx-nstrut><mjx-mrow size="s"><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2202"></mjx-c></mjx-mo></mjx-texatom><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44F TEX-I"></mjx-c></mjx-mi></mjx-mrow></mjx-num><mjx-dbox><mjx-dtable><mjx-line></mjx-line><mjx-row><mjx-den><mjx-dstrut></mjx-dstrut><mjx-mrow size="s"><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2202"></mjx-c></mjx-mo></mjx-texatom><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D43F TEX-I"></mjx-c></mjx-mi></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c200B"></mjx-c></mjx-mo></mjx-texatom><mjx-msub><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-stretchy-v class="mjx-c7C" style="height: 1.623em; vertical-align: -0.561em;"><mjx-ext><mjx-c></mjx-c></mjx-ext><mjx-mark></mjx-mark></mjx-stretchy-v></mjx-mo></mjx-texatom><mjx-script style="vertical-align: -0.597em;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44F TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44F TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c30"></mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-texatom></mjx-script></mjx-msub><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c200B"></mjx-c></mjx-mo></mjx-texatom></mjx-math></mjx-container></span><br>
+</li>
+<li dir="auto">η (eta) 稱為 <strong>learning rate (學習率)</strong>，是一個超參數 (hyperparameter)，控制每次更新的步長。<br>
+</li>
+</ul>
+</li>
+<li dir="auto">
+<p><strong>疊代更新</strong>：重複步驟 2 和 3，直到損失函數的值不再顯著下降。</p>
+</li>
+</ol>
+</li>
+<li dir="auto"><strong>批次梯度下降 (Batch Gradient Descent)</strong>：將訓練數據分成多個批次 (batch) 進行更新，而非一次性處理所有數據。一個 <strong>epoch</strong> 代表所有批次都被訓練過一次。<br>
+</li>
+</ul>
+<h1 data-heading="模型的限制與進階" dir="auto">模型的限制與進階</h1>
+<p dir="auto">簡單的線性模型有其局限性，當資料的關係不是線性的時候，它的表現會很差。因此，我們需要更複雜、更具彈性的模型。</p>
+<ul>
+<li dir="auto"><strong>超越線性模型</strong>：
+<ul>
+<li dir="auto"><strong>Sigmoid 函數</strong>：  </li>
+</ul>
+</li>
+</ul>
+<div class="math math-block is-loaded"><mjx-container class="MathJax" jax="CHTML" display="true"><mjx-math display="true" class="MJX-TEX" style="margin-left: 0px; margin-right: 0px;"><mjx-mtable style="min-width: 10.652em;"><mjx-table><mjx-itable><mjx-mtr><mjx-mtd style="text-align: right; padding-right: 0px; padding-bottom: 0.15em;"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D466 TEX-I"></mjx-c></mjx-mi><mjx-tstrut></mjx-tstrut></mjx-mtd><mjx-mtd style="text-align: left; padding-left: 0px; padding-bottom: 0.15em;"><mjx-mi class="mjx-n"></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="4"><mjx-c class="mjx-c1D450 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c22C5"></mjx-c></mjx-mo><mjx-mfrac space="3"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mrow><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-msup space="3"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D452 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.289em;"><mjx-texatom size="s" texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2212"></mjx-c></mjx-mo><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44F TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D464 TEX-I"></mjx-c></mjx-mi><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-texatom></mjx-script></mjx-msup></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr><mjx-mtr><mjx-mtd style="text-align: right; padding-right: 0px; padding-top: 0.15em;"><mjx-tstrut></mjx-tstrut></mjx-mtd><mjx-mtd style="text-align: left; padding-left: 0px; padding-top: 0.15em;"><mjx-mi class="mjx-n"></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="4"><mjx-c class="mjx-c1D450 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c22C5"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="3"><mjx-c class="mjx-c1D460 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D454 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45A TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45C TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D451 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44F TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="3"><mjx-c class="mjx-c1D464 TEX-I"></mjx-c></mjx-mi><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr></mjx-itable></mjx-table></mjx-mtable></mjx-math></mjx-container></div>
+<ul>
+<li dir="auto">
+<p><strong>分段線性曲線</strong>：可以通過多個 Sigmoid 函數的組合來近似任意連續曲線。<br>
+<img width="400" alt="attachments/Pastedimage20250825200832.png" src="attachments/Pastedimage20250825200832.png" class="internal-embed"><br>
+<span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D466 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="4"><mjx-c class="mjx-c1D44F TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-munder space="3"><mjx-row><mjx-base><mjx-mo class="mjx-sop"><mjx-c class="mjx-c2211 TEX-S1"></mjx-c></mjx-mo></mjx-base></mjx-row><mjx-row><mjx-under style="padding-top: 0.167em; padding-left: 0.406em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi></mjx-under></mjx-row></mjx-munder><mjx-texatom space="2" texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c200B"></mjx-c></mjx-mo></mjx-texatom><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D450 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c22C5"></mjx-c></mjx-mo><mjx-texatom space="3" texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c200B"></mjx-c></mjx-mo></mjx-texatom><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D460 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D454 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45A TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45C TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D451 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44F TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c200B"></mjx-c></mjx-mo></mjx-texatom><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-msub space="3"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D464 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c200B"></mjx-c></mjx-mo></mjx-texatom><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c200B"></mjx-c></mjx-mo></mjx-texatom><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math></mjx-container></span></p>
+</li>
+<li dir="auto">
+<p><strong>從單一特徵到多個特徵</strong>：<br>
+<img width="300" alt="attachments/Pasted image 20250823151832.png" src="attachments/Pasted image 20250823151832.png" class="internal-embed"><img width="300" alt="attachments/Pasted image 20250823151850.png" src="attachments/Pasted image 20250823151850.png" class="internal-embed"><img width="300" alt="attachments/Pasted image 20250823151923.png" src="attachments/Pasted image 20250823151923.png" class="internal-embed"></p>
+<ul>
+<li dir="auto">將模型擴展到多個輸入特徵 <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c200B"></mjx-c></mjx-mo></mjx-texatom><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="2"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c200B"></mjx-c></mjx-mo></mjx-texatom><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="2"><mjx-c class="mjx-c2026"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="2"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="2"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D457 TEX-I"></mjx-c></mjx-mi></mjx-math></mjx-container></span>​。<br>
+</li>
+<li dir="auto"><span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D466 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="4"><mjx-c class="mjx-c1D44F TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-munder space="3"><mjx-row><mjx-base><mjx-mo class="mjx-sop"><mjx-c class="mjx-c2211 TEX-S1"></mjx-c></mjx-mo></mjx-base></mjx-row><mjx-row><mjx-under style="padding-top: 0.167em; padding-left: 0.406em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi></mjx-under></mjx-row></mjx-munder><mjx-texatom space="2" texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c200B"></mjx-c></mjx-mo></mjx-texatom><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D450 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c22C5"></mjx-c></mjx-mo><mjx-texatom space="3" texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c200B"></mjx-c></mjx-mo></mjx-texatom><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D460 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D454 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45A TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45C TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D451 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44F TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c200B"></mjx-c></mjx-mo></mjx-texatom><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-munder space="3"><mjx-row><mjx-base><mjx-mo class="mjx-sop"><mjx-c class="mjx-c2211 TEX-S1"></mjx-c></mjx-mo></mjx-base></mjx-row><mjx-row><mjx-under style="padding-top: 0.167em; padding-left: 0.382em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D457 TEX-I"></mjx-c></mjx-mi></mjx-under></mjx-row></mjx-munder><mjx-msub space="2"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D464 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D457 TEX-I"></mjx-c></mjx-mi></mjx-texatom></mjx-script></mjx-msub><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c200B"></mjx-c></mjx-mo></mjx-texatom><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math></mjx-container></span></li>
+</ul>
+</li>
+</ul>
+<h2 data-heading="**深度網路的運作原理**" dir="auto"><strong>深度網路的運作原理</strong></h2>
+<ul>
+<li dir="auto">
+<p>深度網路的每一層都由多個神經元組成。<br>
+</p>
+</li>
+<li dir="auto">
+<p>每個神經元會對輸入數據進行加權和 (weighted sum) 並加上偏差 (bias)，然後通過<strong>激活函數 (Activation function)</strong> 進行非線性轉換。<br>
+</p>
+</li>
+<li dir="auto">
+<p>這些隱藏層的輸出會作為下一層的輸入，最終層的輸出即為模型的預測值。<br>
+</p>
+</li>
+<li dir="auto">
+<p><strong>範例</strong>：</p>
+<ul>
+<li dir="auto"><span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45F TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c200B"></mjx-c></mjx-mo></mjx-texatom><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-msub space="4"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44F TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c200B"></mjx-c></mjx-mo></mjx-texatom><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-munder space="3"><mjx-row><mjx-base><mjx-mo class="mjx-sop"><mjx-c class="mjx-c2211 TEX-S1"></mjx-c></mjx-mo></mjx-base></mjx-row><mjx-row><mjx-under style="padding-top: 0.167em; padding-left: 0.382em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D457 TEX-I"></mjx-c></mjx-mi></mjx-under></mjx-row></mjx-munder><mjx-texatom space="2" texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c200B"></mjx-c></mjx-mo></mjx-texatom><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D464 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D457 TEX-I"></mjx-c></mjx-mi></mjx-texatom></mjx-script></mjx-msub><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c200B"></mjx-c></mjx-mo></mjx-texatom><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D457 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c200B"></mjx-c></mjx-mo></mjx-texatom></mjx-math></mjx-container></span><br>
+</li>
+<li dir="auto"><span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c200B"></mjx-c></mjx-mo></mjx-texatom><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="4"><mjx-c class="mjx-c1D70E TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45F TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c200B"></mjx-c></mjx-mo></mjx-texatom><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math></mjx-container></span> (其中 σ 是 Sigmoid 或 ReLU 等激活函數)<br>
+</li>
+<li dir="auto"><span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45F TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c200B"></mjx-c></mjx-mo></mjx-texatom><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-msub space="4"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44F TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c200B"></mjx-c></mjx-mo></mjx-texatom><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-munder space="3"><mjx-row><mjx-base><mjx-mo class="mjx-sop"><mjx-c class="mjx-c2211 TEX-S1"></mjx-c></mjx-mo></mjx-base></mjx-row><mjx-row><mjx-under style="padding-top: 0.167em; padding-left: 0.406em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi></mjx-under></mjx-row></mjx-munder><mjx-msub space="2"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D450 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub></mjx-math></mjx-container></span>​<br>
+<img width="300" alt="attachments/Pasted image 20250823152019.png" src="attachments/Pasted image 20250823152019.png" class="internal-embed"><img width="300" alt="attachments/Pasted image 20250823152029.png" src="attachments/Pasted image 20250823152029.png" class="internal-embed"></li>
+</ul>
+</li>
+<li dir="auto">
+<p><strong>神經網路 (Neural Network)</strong>：</p>
+<ul>
+<li dir="auto">上述模型正是單層神經網路的數學表示。<br>
+</li>
+<li dir="auto"><strong>輸入層</strong>：輸入特徵 <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D457 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub></mjx-math></mjx-container></span>​。<br>
+</li>
+<li dir="auto"><strong>隱藏層</strong>：Sigmoid 函數組成的層。<br>
+</li>
+<li dir="auto"><strong>輸出層</strong>：輸出 <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D466 TEX-I"></mjx-c></mjx-mi></mjx-math></mjx-container></span>。</li>
+<li dir="auto">整個網絡的未知參數 (包括所有的 <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D464 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="2"><mjx-c class="mjx-c1D44F TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="2"><mjx-c class="mjx-c1D450 TEX-I"></mjx-c></mjx-mi></mjx-math></mjx-container></span>) 可以用一個向量 <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D703 TEX-I"></mjx-c></mjx-mi></mjx-math></mjx-container></span> 來表示，並同樣使用梯度下降進行最佳化。</li>
+</ul>
+</li>
+<li dir="auto">
+<p><strong>新模型的最佳化</strong>：</p>
+<pre><code>- 對於更複雜的模型（例如神經網路），損失函數 $\large L$ 是關於所有參數（weights 和 biases）的函數。
+    
+-  **梯度下降的更新公式** ：
+    - 假設模型有參數集合 $θ=[w11​,w12​,…,b1​,b2​,…,c1​,c2​,…]=[θ_1,θ_2,θ_3...]$ 。
+    - Gradient  $g$ 
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path><style>
+:root {
+  --default-font: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Microsoft YaHei Light", sans-serif;
+  --font-monospace: 'Source Code Pro', monospace;
+  --background-primary: #ffffff;
+  --background-modifier-border: #ddd;
+  --text-accent: #705dcf;
+  --text-accent-hover: #7a6ae6;
+  --text-normal: #2e3338;
+  --background-secondary: #f2f3f5;
+  --background-secondary-alt: #e3e5e8;
+  --text-muted: #888888;
+}</style>"<marker id="mermaid_arrowhead" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker>"</svg></button></pre>
+<div class="math math-block is-loaded"><mjx-container class="MathJax" jax="CHTML" display="true"><mjx-math display="true" class="MJX-TEX" style="margin-left: 0px; margin-right: 0px;"><mjx-mtable style="min-width: 6.563em;"><mjx-table><mjx-itable><mjx-mtr><mjx-mtd style="text-align: right; padding-right: 0px; padding-bottom: 0.15em;"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D454 TEX-I"></mjx-c></mjx-mi><mjx-tstrut></mjx-tstrut></mjx-mtd><mjx-mtd style="text-align: left; padding-left: 0px; padding-bottom: 0.15em;"><mjx-mi class="mjx-n"></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mrow space="4"><mjx-mo class="mjx-n"><mjx-stretchy-v class="mjx-c5B" style="height: 5.783em; vertical-align: -2.641em;"><mjx-beg><mjx-c></mjx-c></mjx-beg><mjx-ext><mjx-c></mjx-c></mjx-ext><mjx-end><mjx-c></mjx-c></mjx-end><mjx-mark></mjx-mark></mjx-stretchy-v></mjx-mo><mjx-mtable justify="left" style="min-width: 3.419em;"><mjx-table><mjx-itable><mjx-mtr><mjx-mtd style="padding-bottom: 0.2em;"><mjx-mfrac><mjx-frac><mjx-num><mjx-nstrut></mjx-nstrut><mjx-mrow size="s"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D715"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D43F TEX-I"></mjx-c></mjx-mi></mjx-mrow></mjx-num><mjx-dbox><mjx-dtable><mjx-line></mjx-line><mjx-row><mjx-den><mjx-dstrut></mjx-dstrut><mjx-mrow size="s"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D715"></mjx-c></mjx-mi><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D703 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-msub><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-stretchy-v class="mjx-c7C" style="height: 1.623em; vertical-align: -0.561em;"><mjx-ext><mjx-c></mjx-c></mjx-ext><mjx-mark></mjx-mark></mjx-stretchy-v></mjx-mo></mjx-texatom><mjx-script style="vertical-align: -0.597em;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D703 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D703 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.289em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c30"></mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-texatom></mjx-script></mjx-msub><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr><mjx-mtr><mjx-mtd style="padding-top: 0.2em; padding-bottom: 0.2em;"><mjx-mfrac><mjx-frac><mjx-num><mjx-nstrut></mjx-nstrut><mjx-mrow size="s"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D715"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D43F TEX-I"></mjx-c></mjx-mi></mjx-mrow></mjx-num><mjx-dbox><mjx-dtable><mjx-line></mjx-line><mjx-row><mjx-den><mjx-dstrut></mjx-dstrut><mjx-mrow size="s"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D715"></mjx-c></mjx-mi><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D703 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-msub><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-stretchy-v class="mjx-c7C" style="height: 1.623em; vertical-align: -0.561em;"><mjx-ext><mjx-c></mjx-c></mjx-ext><mjx-mark></mjx-mark></mjx-stretchy-v></mjx-mo></mjx-texatom><mjx-script style="vertical-align: -0.597em;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D703 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D703 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.289em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c30"></mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-texatom></mjx-script></mjx-msub><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr><mjx-mtr><mjx-mtd style="padding-top: 0.2em;"><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c22EE"></mjx-c></mjx-mo></mjx-texatom><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr></mjx-itable></mjx-table></mjx-mtable><mjx-mo class="mjx-n"><mjx-stretchy-v class="mjx-c5D" style="height: 5.783em; vertical-align: -2.641em;"><mjx-beg><mjx-c></mjx-c></mjx-beg><mjx-ext><mjx-c></mjx-c></mjx-ext><mjx-end><mjx-c></mjx-c></mjx-end><mjx-mark></mjx-mark></mjx-stretchy-v></mjx-mo></mjx-mrow><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr><mjx-mtr><mjx-mtd style="text-align: right; padding-right: 0px; padding-top: 0.15em;"><mjx-tstrut></mjx-tstrut></mjx-mtd><mjx-mtd style="text-align: left; padding-left: 0px; padding-top: 0.15em;"><mjx-mi class="mjx-n"></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mi class="mjx-n" space="4"><mjx-c class="mjx-c2207"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D43F TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D703 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.413em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c30"></mjx-c></mjx-mn></mjx-script></mjx-msup><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr></mjx-itable></mjx-table></mjx-mtable></mjx-math></mjx-container></div>
+<pre><code>	- 其中， $∇L(θ)$ 是梯度向量，包含損失函數對每個參數的偏導數：  
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path><style>
+:root {
+  --default-font: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Microsoft YaHei Light", sans-serif;
+  --font-monospace: 'Source Code Pro', monospace;
+  --background-primary: #ffffff;
+  --background-modifier-border: #ddd;
+  --text-accent: #705dcf;
+  --text-accent-hover: #7a6ae6;
+  --text-normal: #2e3338;
+  --background-secondary: #f2f3f5;
+  --background-secondary-alt: #e3e5e8;
+  --text-muted: #888888;
+}</style>"<marker id="mermaid_arrowhead" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker>"</svg></button></pre>
+</li>
+</ul>
+<div class="math math-block is-loaded"><mjx-container class="MathJax" jax="CHTML" display="true"><mjx-math display="true" class="MJX-TEX" style="margin-left: 0px; margin-right: 0px;"><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2207"></mjx-c></mjx-mo></mjx-texatom><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D43F TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D703 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mrow space="4"><mjx-mo class="mjx-n"><mjx-stretchy-v class="mjx-c5B" style="height: 10.143em; vertical-align: -4.821em;"><mjx-beg><mjx-c></mjx-c></mjx-beg><mjx-ext><mjx-c></mjx-c></mjx-ext><mjx-end><mjx-c></mjx-c></mjx-end><mjx-mark></mjx-mark></mjx-stretchy-v></mjx-mo><mjx-mtable style="min-width: 2.054em;"><mjx-table><mjx-itable><mjx-mtr><mjx-mtd style="padding-bottom: 0.2em;"><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c200B"></mjx-c></mjx-mo></mjx-texatom><mjx-mfrac><mjx-frac><mjx-num><mjx-nstrut></mjx-nstrut><mjx-mrow size="s"><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2202"></mjx-c></mjx-mo></mjx-texatom><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D43F TEX-I"></mjx-c></mjx-mi></mjx-mrow></mjx-num><mjx-dbox><mjx-dtable><mjx-line></mjx-line><mjx-row><mjx-den><mjx-dstrut></mjx-dstrut><mjx-mrow size="s"><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2202"></mjx-c></mjx-mo></mjx-texatom><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D464 TEX-I"></mjx-c></mjx-mi><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr><mjx-mtr><mjx-mtd style="padding-top: 0.2em; padding-bottom: 0.2em;"><mjx-mfrac><mjx-frac><mjx-num><mjx-nstrut></mjx-nstrut><mjx-mrow size="s"><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2202"></mjx-c></mjx-mo></mjx-texatom><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D43F TEX-I"></mjx-c></mjx-mi></mjx-mrow></mjx-num><mjx-dbox><mjx-dtable><mjx-line></mjx-line><mjx-row><mjx-den><mjx-dstrut></mjx-dstrut><mjx-mrow size="s"><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2202"></mjx-c></mjx-mo></mjx-texatom><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D464 TEX-I"></mjx-c></mjx-mi><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr><mjx-mtr><mjx-mtd style="padding-top: 0.2em; padding-bottom: 0.2em;"><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c22EE"></mjx-c></mjx-mo></mjx-texatom><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr><mjx-mtr><mjx-mtd style="padding-top: 0.2em; padding-bottom: 0.2em;"><mjx-mfrac><mjx-frac><mjx-num><mjx-nstrut></mjx-nstrut><mjx-mrow size="s"><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2202"></mjx-c></mjx-mo></mjx-texatom><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D43F TEX-I"></mjx-c></mjx-mi></mjx-mrow></mjx-num><mjx-dbox><mjx-dtable><mjx-line></mjx-line><mjx-row><mjx-den><mjx-dstrut></mjx-dstrut><mjx-mrow size="s"><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2202"></mjx-c></mjx-mo></mjx-texatom><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44F TEX-I"></mjx-c></mjx-mi><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr><mjx-mtr><mjx-mtd style="padding-top: 0.2em; padding-bottom: 0.2em;"><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c200B"></mjx-c></mjx-mo></mjx-texatom><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c200B"></mjx-c></mjx-mo></mjx-texatom><mjx-mfrac><mjx-frac><mjx-num><mjx-nstrut></mjx-nstrut><mjx-mrow size="s"><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2202"></mjx-c></mjx-mo></mjx-texatom><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D43F TEX-I"></mjx-c></mjx-mi></mjx-mrow></mjx-num><mjx-dbox><mjx-dtable><mjx-line></mjx-line><mjx-row><mjx-den><mjx-dstrut></mjx-dstrut><mjx-mrow size="s"><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2202"></mjx-c></mjx-mo></mjx-texatom><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44F TEX-I"></mjx-c></mjx-mi><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr><mjx-mtr><mjx-mtd style="padding-top: 0.2em;"><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c22EE"></mjx-c></mjx-mo></mjx-texatom><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c200B"></mjx-c></mjx-mo></mjx-texatom><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr></mjx-itable></mjx-table></mjx-mtable><mjx-mo class="mjx-n"><mjx-stretchy-v class="mjx-c5D" style="height: 10.143em; vertical-align: -4.821em;"><mjx-beg><mjx-c></mjx-c></mjx-beg><mjx-ext><mjx-c></mjx-c></mjx-ext><mjx-end><mjx-c></mjx-c></mjx-end><mjx-mark></mjx-mark></mjx-stretchy-v></mjx-mo></mjx-mrow></mjx-math></mjx-container></div>
+<div class="math math-block is-loaded"><mjx-container class="MathJax" jax="CHTML" display="true"><mjx-math display="true" class="MJX-TEX" style="margin-left: 0px; margin-right: 0px;"><mjx-mtable style="min-width: 12.285em;"><mjx-table><mjx-itable><mjx-mtr><mjx-mtd style="text-align: right; padding-right: 0px; padding-bottom: 0.15em;"><mjx-mrow><mjx-mo class="mjx-n"><mjx-stretchy-v class="mjx-c5B" style="height: 4.594em; vertical-align: -2.047em;"><mjx-beg><mjx-c></mjx-c></mjx-beg><mjx-ext><mjx-c></mjx-c></mjx-ext><mjx-end><mjx-c></mjx-c></mjx-end><mjx-mark></mjx-mark></mjx-stretchy-v></mjx-mo><mjx-mtable justify="right" style="min-width: 0.906em;"><mjx-table><mjx-itable><mjx-mtr><mjx-mtd style="padding-bottom: 0.2em;"><mjx-msubsup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D703 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.288em; margin-left: 0px;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c31"></mjx-c></mjx-mn><mjx-spacer style="margin-top: 0.18em;"></mjx-spacer><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-script></mjx-msubsup><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr><mjx-mtr><mjx-mtd style="padding-top: 0.2em; padding-bottom: 0.2em;"><mjx-msubsup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D703 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.288em; margin-left: 0px;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c31"></mjx-c></mjx-mn><mjx-spacer style="margin-top: 0.18em;"></mjx-spacer><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msubsup><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr><mjx-mtr><mjx-mtd style="padding-top: 0.2em;"><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c22EE"></mjx-c></mjx-mo></mjx-texatom><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr></mjx-itable></mjx-table></mjx-mtable><mjx-mo class="mjx-n"><mjx-stretchy-v class="mjx-c5D" style="height: 4.594em; vertical-align: -2.047em;"><mjx-beg><mjx-c></mjx-c></mjx-beg><mjx-ext><mjx-c></mjx-c></mjx-ext><mjx-end><mjx-c></mjx-c></mjx-end><mjx-mark></mjx-mark></mjx-stretchy-v></mjx-mo></mjx-mrow><mjx-tstrut></mjx-tstrut></mjx-mtd><mjx-mtd style="text-align: left; padding-left: 0px; padding-bottom: 0.15em;"><mjx-mi class="mjx-n"></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mrow space="4"><mjx-mo class="mjx-n"><mjx-stretchy-v class="mjx-c5B" style="height: 4.625em; vertical-align: -2.062em;"><mjx-beg><mjx-c></mjx-c></mjx-beg><mjx-ext><mjx-c></mjx-c></mjx-ext><mjx-end><mjx-c></mjx-c></mjx-end><mjx-mark></mjx-mark></mjx-stretchy-v></mjx-mo><mjx-mtable justify="left" style="min-width: 0.906em;"><mjx-table><mjx-itable><mjx-mtr><mjx-mtd style="padding-bottom: 0.2em;"><mjx-msubsup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D703 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.297em; margin-left: 0px;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c30"></mjx-c></mjx-mn><mjx-spacer style="margin-top: 0.18em;"></mjx-spacer><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-script></mjx-msubsup><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr><mjx-mtr><mjx-mtd style="padding-top: 0.2em; padding-bottom: 0.2em;"><mjx-msubsup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D703 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.297em; margin-left: 0px;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c30"></mjx-c></mjx-mn><mjx-spacer style="margin-top: 0.18em;"></mjx-spacer><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msubsup><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr><mjx-mtr><mjx-mtd style="padding-top: 0.2em;"><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c22EE"></mjx-c></mjx-mo></mjx-texatom><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr></mjx-itable></mjx-table></mjx-mtable><mjx-mo class="mjx-n"><mjx-stretchy-v class="mjx-c5D" style="height: 4.625em; vertical-align: -2.062em;"><mjx-beg><mjx-c></mjx-c></mjx-beg><mjx-ext><mjx-c></mjx-c></mjx-ext><mjx-end><mjx-c></mjx-c></mjx-end><mjx-mark></mjx-mark></mjx-stretchy-v></mjx-mo></mjx-mrow><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2212"></mjx-c></mjx-mo><mjx-mrow space="3"><mjx-mo class="mjx-n"><mjx-stretchy-v class="mjx-c5B" style="height: 5.783em; vertical-align: -2.641em;"><mjx-beg><mjx-c></mjx-c></mjx-beg><mjx-ext><mjx-c></mjx-c></mjx-ext><mjx-end><mjx-c></mjx-c></mjx-end><mjx-mark></mjx-mark></mjx-stretchy-v></mjx-mo><mjx-mtable justify="left" style="min-width: 3.916em;"><mjx-table><mjx-itable><mjx-mtr><mjx-mtd style="padding-bottom: 0.2em;"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D702 TEX-I"></mjx-c></mjx-mi><mjx-mfrac><mjx-frac><mjx-num><mjx-nstrut></mjx-nstrut><mjx-mrow size="s"><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2202"></mjx-c></mjx-mo></mjx-texatom><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D43F TEX-I"></mjx-c></mjx-mi></mjx-mrow></mjx-num><mjx-dbox><mjx-dtable><mjx-line></mjx-line><mjx-row><mjx-den><mjx-dstrut></mjx-dstrut><mjx-mrow size="s"><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2202"></mjx-c></mjx-mo></mjx-texatom><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D703 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-msub><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-stretchy-v class="mjx-c7C" style="height: 1.623em; vertical-align: -0.561em;"><mjx-ext><mjx-c></mjx-c></mjx-ext><mjx-mark></mjx-mark></mjx-stretchy-v></mjx-mo></mjx-texatom><mjx-script style="vertical-align: -0.597em;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D703 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D703 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.289em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c30"></mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-texatom></mjx-script></mjx-msub><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr><mjx-mtr><mjx-mtd style="padding-top: 0.2em; padding-bottom: 0.2em;"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D702 TEX-I"></mjx-c></mjx-mi><mjx-mfrac><mjx-frac><mjx-num><mjx-nstrut></mjx-nstrut><mjx-mrow size="s"><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2202"></mjx-c></mjx-mo></mjx-texatom><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D43F TEX-I"></mjx-c></mjx-mi></mjx-mrow></mjx-num><mjx-dbox><mjx-dtable><mjx-line></mjx-line><mjx-row><mjx-den><mjx-dstrut></mjx-dstrut><mjx-mrow size="s"><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2202"></mjx-c></mjx-mo></mjx-texatom><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D703 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-msub><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-stretchy-v class="mjx-c7C" style="height: 1.623em; vertical-align: -0.561em;"><mjx-ext><mjx-c></mjx-c></mjx-ext><mjx-mark></mjx-mark></mjx-stretchy-v></mjx-mo></mjx-texatom><mjx-script style="vertical-align: -0.597em;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D703 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D703 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.289em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c30"></mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-texatom></mjx-script></mjx-msub><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr><mjx-mtr><mjx-mtd style="padding-top: 0.2em;"><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c22EE"></mjx-c></mjx-mo></mjx-texatom><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr></mjx-itable></mjx-table></mjx-mtable><mjx-mo class="mjx-n"><mjx-stretchy-v class="mjx-c5D" style="height: 5.783em; vertical-align: -2.641em;"><mjx-beg><mjx-c></mjx-c></mjx-beg><mjx-ext><mjx-c></mjx-c></mjx-ext><mjx-end><mjx-c></mjx-c></mjx-end><mjx-mark></mjx-mark></mjx-stretchy-v></mjx-mo></mjx-mrow><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr><mjx-mtr><mjx-mtd style="text-align: right; padding-right: 0px; padding-top: 0.15em;"><mjx-tstrut></mjx-tstrut></mjx-mtd><mjx-mtd style="text-align: left; padding-left: 0px; padding-top: 0.15em;"><mjx-mi class="mjx-n"></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-msup space="4"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D703 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.413em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-script></mjx-msup><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-msup space="4"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D703 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.413em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c30"></mjx-c></mjx-mn></mjx-script></mjx-msup><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2212"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="3"><mjx-c class="mjx-c1D702 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D454 TEX-I"></mjx-c></mjx-mi><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr></mjx-itable></mjx-table></mjx-mtable></mjx-math></mjx-container></div>
+<ul>
+<li dir="auto">更新公式為：</li>
+</ul>
+<div class="math math-block is-loaded"><mjx-container class="MathJax" jax="CHTML" display="true"><mjx-math display="true" class="MJX-TEX" style="margin-left: 0px; margin-right: 0px;"><mjx-mtable style="min-width: 13.719em;"><mjx-table><mjx-itable><mjx-mtr><mjx-mtd style="text-align: right; padding-right: 0px; padding-bottom: 0.15em;"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D436 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45C TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45A TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45D TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D462 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D461 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D452 TEX-I"></mjx-c></mjx-mi><mjx-mtext class="mjx-n"><mjx-c class="mjx-cA0"></mjx-c></mjx-mtext><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D454 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45F TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D451 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D452 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D461 TEX-I"></mjx-c></mjx-mi><mjx-mtext class="mjx-n"><mjx-c class="mjx-cA0"></mjx-c></mjx-mtext><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D454 TEX-I"></mjx-c></mjx-mi><mjx-tstrut></mjx-tstrut></mjx-mtd><mjx-mtd style="text-align: left; padding-left: 0px; padding-bottom: 0.15em;"><mjx-mi class="mjx-n"></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mi class="mjx-n" space="4"><mjx-c class="mjx-c2207"></mjx-c></mjx-mi><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D43F TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.413em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-script></mjx-msup><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D703 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.413em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c30"></mjx-c></mjx-mn></mjx-script></mjx-msup><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr><mjx-mtr><mjx-mtd style="text-align: right; padding-right: 0px; padding-top: 0.15em; padding-bottom: 0.15em;"><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D703 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.413em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-script></mjx-msup><mjx-tstrut></mjx-tstrut></mjx-mtd><mjx-mtd style="text-align: left; padding-left: 0px; padding-top: 0.15em; padding-bottom: 0.15em;"><mjx-mi class="mjx-n"></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-msup space="4"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D703 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.413em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c30"></mjx-c></mjx-mn></mjx-script></mjx-msup><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2212"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="3"><mjx-c class="mjx-c1D702 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D454 TEX-I"></mjx-c></mjx-mi><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr><mjx-mtr><mjx-mtd style="text-align: right; padding-right: 0px; padding-top: 0.15em; padding-bottom: 0.15em;"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D436 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45C TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45A TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45D TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D462 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D461 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D452 TEX-I"></mjx-c></mjx-mi><mjx-mtext class="mjx-n"><mjx-c class="mjx-cA0"></mjx-c></mjx-mtext><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D454 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45F TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D451 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D452 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D461 TEX-I"></mjx-c></mjx-mi><mjx-mtext class="mjx-n"><mjx-c class="mjx-cA0"></mjx-c></mjx-mtext><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D454 TEX-I"></mjx-c></mjx-mi><mjx-tstrut></mjx-tstrut></mjx-mtd><mjx-mtd style="text-align: left; padding-left: 0px; padding-top: 0.15em; padding-bottom: 0.15em;"><mjx-mi class="mjx-n"></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mi class="mjx-n" space="4"><mjx-c class="mjx-c2207"></mjx-c></mjx-mi><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D43F TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.413em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msup><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D703 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.413em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-script></mjx-msup><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr><mjx-mtr><mjx-mtd style="text-align: right; padding-right: 0px; padding-top: 0.15em; padding-bottom: 0.15em;"><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D703 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.413em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msup><mjx-tstrut></mjx-tstrut></mjx-mtd><mjx-mtd style="text-align: left; padding-left: 0px; padding-top: 0.15em; padding-bottom: 0.15em;"><mjx-mi class="mjx-n"></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-msup space="4"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D703 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.413em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-script></mjx-msup><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2212"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="3"><mjx-c class="mjx-c1D702 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D454 TEX-I"></mjx-c></mjx-mi><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr><mjx-mtr><mjx-mtd style="text-align: right; padding-right: 0px; padding-top: 0.15em; padding-bottom: 0.15em;"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D436 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45C TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45A TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45D TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D462 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D461 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D452 TEX-I"></mjx-c></mjx-mi><mjx-mtext class="mjx-n"><mjx-c class="mjx-cA0"></mjx-c></mjx-mtext><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D454 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45F TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D451 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D452 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D461 TEX-I"></mjx-c></mjx-mi><mjx-mtext class="mjx-n"><mjx-c class="mjx-cA0"></mjx-c></mjx-mtext><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D454 TEX-I"></mjx-c></mjx-mi><mjx-tstrut></mjx-tstrut></mjx-mtd><mjx-mtd style="text-align: left; padding-left: 0px; padding-top: 0.15em; padding-bottom: 0.15em;"><mjx-mi class="mjx-n"></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mi class="mjx-n" space="4"><mjx-c class="mjx-c2207"></mjx-c></mjx-mi><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D43F TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.413em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c33"></mjx-c></mjx-mn></mjx-script></mjx-msup><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D703 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.413em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msup><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr><mjx-mtr><mjx-mtd style="text-align: right; padding-right: 0px; padding-top: 0.15em;"><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D703 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.413em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c33"></mjx-c></mjx-mn></mjx-script></mjx-msup><mjx-tstrut></mjx-tstrut></mjx-mtd><mjx-mtd style="text-align: left; padding-left: 0px; padding-top: 0.15em;"><mjx-mi class="mjx-n"></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-msup space="4"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D703 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.413em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msup><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2212"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="3"><mjx-c class="mjx-c1D702 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D454 TEX-I"></mjx-c></mjx-mi><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr></mjx-itable></mjx-table></mjx-mtable></mjx-math></mjx-container></div>
+<ul>
+<li dir="auto"><strong>ReLU (Rectified Linear Unit) 函數</strong>：
+<ul>
+<li dir="auto">一種比 Sigmoid 更為常見的<strong>激活函數 (Activation Function)</strong>，其定義為：  
+  ReLU(x)=max(0,x)</li>
+<li dir="auto">ReLU 函數的組合同樣可以近似任意連續曲線，且在實踐中往往表現更好。</li>
+</ul>
+</li>
+</ul>
+    </body>
+</html>
