@@ -56,13 +56,13 @@
     
     其中：
     
-    - P(Ck​∣x)：**後驗機率 (Posterior Probability)**，給定輸入 x 屬於類別 Ck​ 的機率。
+    - $P(C_k​∣x)$：**後驗機率 (Posterior Probability)**，給定輸入 $x$ 屬於類別 $C_k$​ 的機率。
         
-    - P(x∣Ck​)：**類別機率 (Class-Conditional Probability)**，給定類別 Ck​ 生成輸入 x 的機率。
+    - $P(x∣C_k​)$：**類別機率 (Class-Conditional Probability)**，給定類別 $C_k$​ 生成輸入 x 的機率。
         
-    - P(Ck​)：**先驗機率 (Prior Probability)**，在看到任何資料前，類別 Ck​ 出現的機率。
+    - $P(C_k​)$：**先驗機率 (Prior Probability)**，在看到任何資料前，類別 Ck​ 出現的機率。
         
-    - P(x)：**證據 (Evidence)** 或邊緣機率，輸入 x 出現的機率。
+    - $P(x)$：**證據 (Evidence)** 或邊緣機率，輸入 x 出現的機率。
         
     
     對於二元分類，我們比較 P(C1​∣x) 和 P(C2​∣x) 的大小來決定分類：
